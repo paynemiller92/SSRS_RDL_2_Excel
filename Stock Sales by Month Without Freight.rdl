@@ -1,0 +1,1457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox5">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <DefaultName>Textbox5</DefaultName>
+                    <Style>
+                      <Border>
+                        <Width>0.25pt</Width>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="Textbox4">
+                    <CanGrow>true</CanGrow>
+                    <UserSort>
+                      <SortExpression>=Fields!Value_Stream.Value</SortExpression>
+                      <SortExpressionScope>Value_Stream</SortExpressionScope>
+                    </UserSort>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Value Stream</Value>
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <DefaultName>Textbox4</DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.25pt</Width>
+                      </Border>
+                      <BackgroundColor>#093f99</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.81945in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.18069in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox9">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!DSP.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>Textbox9</DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FormatSymbolCulture>en-US</FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!DSP.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>Textbox2</DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FormatSymbolCulture>en-US</FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!DSP.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>Textbox12</DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FormatSymbolCulture>en-US</FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox3">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Sum(Fields!DSP.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Format>'$'#,0.00;('$'#,0.00)</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>Textbox3</DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>Solid</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <FormatSymbolCulture>en-US</FormatSymbolCulture>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="ColumnGroupsHeader">
+                <GroupExpressions>
+                  <GroupExpression>ColumnGroupsHeader</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.25in</Size>
+                <CellContents>
+                  <Textbox Name="Calendar_Month_and_Year1">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Calendar Month and Year (DSP)</Value>
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <DefaultName>Calendar_Month_and_Year1</DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.25pt</Width>
+                      </Border>
+                      <BackgroundColor>#093f99</BackgroundColor>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Calendar_Month_and_Year">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Calendar_Month_and_Year.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Cdate(Fields!Calendar_Month_and_Year.Value)</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <TablixHeader>
+                    <Size>0.25in</Size>
+                    <CellContents>
+                      <Textbox Name="Calendar_Month_and_Year">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>=Fields!Calendar_Month_and_Year.Value</Value>
+                                <Style>
+                                  <FontStyle>Normal</FontStyle>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <DefaultName>Calendar_Month_and_Year</DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                            <Width>0.25pt</Width>
+                          </Border>
+                          <BackgroundColor>LightBlue</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.25in</Size>
+                    <CellContents>
+                      <Textbox Name="Textbox1">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>Total</Value>
+                                <Style>
+                                  <FontStyle>Normal</FontStyle>
+                                  <FontSize>8pt</FontSize>
+                                  <FontWeight>Bold</FontWeight>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style />
+                          </Paragraph>
+                        </Paragraphs>
+                        <DefaultName>Textbox1</DefaultName>
+                        <Style>
+                          <Border>
+                            <Style>Solid</Style>
+                            <Width>0.25pt</Width>
+                          </Border>
+                          <BackgroundColor>LightBlue</BackgroundColor>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Value_Stream">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Value_Stream.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>1.57685in</Size>
+                <CellContents>
+                  <Textbox Name="Value_Stream">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Value_Stream.Value</Value>
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontSize>8pt</FontSize>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <DefaultName>Value_Stream</DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.25pt</Width>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <HideIfNoRows>true</HideIfNoRows>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+            <TablixMember>
+              <TablixHeader>
+                <Size>1.57685in</Size>
+                <CellContents>
+                  <Textbox Name="Textbox10">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>Total</Value>
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontSize>8pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <DefaultName>Textbox10</DefaultName>
+                    <Style>
+                      <Border>
+                        <Style>Solid</Style>
+                        <Width>0.25pt</Width>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+              <KeepWithGroup>Before</KeepWithGroup>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>ID_AGT__Reports_Cube_Data_Source</DataSetName>
+        <Top>1.08208in</Top>
+        <Left>0.0125in</Left>
+        <Height>1in</Height>
+        <Width>3.57699in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Sales Force: " + LTrim(join(Parameters!SalesForceSalesForceNumber.Label,", "))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Left>0.0125in</Left>
+        <Height>0.25in</Height>
+        <Width>2.59504in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox37">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Note:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.7393in</Top>
+        <Left>0.0125in</Left>
+        <Height>0.25694in</Height>
+        <Width>0.52083in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CurrentDateValue">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Data is current through " + CStr(CDate(Parameters!CurrentDateValue.Label))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <DefaultName>CurrentDateValue</DefaultName>
+        <Top>0.7393in</Top>
+        <Left>0.5375in</Left>
+        <Height>0.25346in</Height>
+        <Width>4.00486in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox23">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Applied Filters:" &amp; vbCrLf &amp; vbCrLf &amp; vbCrLf</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.38167in</Top>
+        <Left>0.0125in</Left>
+        <Height>0.34375in</Height>
+        <Width>0.52083in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Invoice with: All of (Product Division not in "TOTAL MISC", "UNKNOWN", Calendar Date (Date) &gt;= TwelveMonthsAgo, Contains Freight ≠ "Y", Contains Tax ≠ "Y", Sales Force Number in (prompted), End Use = "DISTRIBUTOR STOCK")</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <DefaultName>textbox11</DefaultName>
+        <Top>0.38167in</Top>
+        <Left>0.5375in</Left>
+        <Height>0.34375in</Height>
+        <Width>6.03125in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>2.08208in</Height>
+    <Style />
+  </Body>
+  <Width>7.625in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0.30556in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox35">
+          <CanGrow>true</CanGrow>
+          <CanShrink>true</CanShrink>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Stock Sales by Month Without Freight </Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#093f99</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <Left>0.0125in</Left>
+          <Height>0.30556in</Height>
+          <Width>3.83333in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox72">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Print Date: " + Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Left>1.25816in</Left>
+          <Height>0.25in</Height>
+          <Width>2in</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Page " + CStr(Globals!PageNumber) + " of " + CStr(Globals!TotalPages)</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <DefaultName>textbox21</DefaultName>
+          <Left>4.26476in</Left>
+          <Height>0.25in</Height>
+          <Width>2in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AGT_Reports_Cube_Data_Source">
+      <DataSourceReference>AGT_Reports_Cube_Data_Source</DataSourceReference>
+      <SecurityType>None</SecurityType>
+      <DataSourceID>f7ffb3a1-142b-4fe6-a4d7-a99ae6627772</DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ID_AGT__Reports_Cube_Data_Source">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="SalesForceSalesForceNumber">
+            <Value>=Parameters!SalesForceSalesForceNumber.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select
+non empty {
+[Measures].[DSP]
+
+} on columns,
+ non empty (
+[Product].[Value Stream].[Value Stream].members*
+[Date].[Calendar Month and Year].[Calendar Month and Year].members
+) on rows
+FROM ( SELECT ( { STRTOSET(@SalesForceSalesForceNumber, CONSTRAINED ) } ) ON COLUMNS 
+FROM ( SELECT (  {EXTRACT({[Date].[Calendar Month and Year].[Calendar Month and Year].aLLmembers * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Month and Year]).Item(0).lag(11):
+  EXTRACT({[Date].[Calendar Month and Year].[Calendar Month and Year].aLLmembers * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Month and Year]).Item(0)}
+ ) ON COLUMNS 
+--FROM ( SELECT ( [Sales Force].[Sales Force Number].&amp;[338] ) ON COLUMNS
+FROM ( SELECT (- {[Product].[Product Division].&amp;[0000],[Product].[Product Division].&amp;[9100]} ) ON COLUMNS
+FROM ( SELECT ( - {[Product].[Contains Freight].&amp;[Y]} ) ON COLUMNS
+FROM ( SELECT ( - {[Product].[Contains Tax].&amp;[Y]} ) ON COLUMNS
+FROM ( SELECT (  {[End Use].[End Use].[Distributor Stock]} ) ON COLUMNS
+FROM ( SELECT ( - {[Product].[Value Stream].&amp;[0000]} ) ON COLUMNS
+from [AgencyReports]
+)))))))
+</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Product</DimensionName>
+                      <HierarchyName>Value Stream</HierarchyName>
+                      <HierarchyUniqueName>[Product].[Value Stream]</HierarchyUniqueName>
+                      <LevelName>Value Stream</LevelName>
+                      <UniqueName>[Product].[Value Stream].[Value Stream]</UniqueName>
+                    </ID>
+                    <ItemCaption>Value Stream</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Month and Year</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Month and Year]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Month and Year].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>DSP</MeasureName>
+                      <UniqueName>[Measures].[DSP]</UniqueName>
+                    </ID>
+                    <ItemCaption>DSP</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>select
+non empty {
+[Measures].[DSP]
+
+} on columns,
+ non empty (
+[Product].[Value Stream].[Value Stream].members*
+[Date].[Calendar Month and Year].[Calendar Month and Year].members
+) on rows
+FROM ( SELECT ( { STRTOSET(@SalesForceSalesForceNumber, CONSTRAINED ) } ) ON COLUMNS 
+FROM ( SELECT (  {EXTRACT({[Date].[Calendar Month and Year].[Calendar Month and Year].aLLmembers * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Month and Year]).Item(0).lag(11):
+  EXTRACT({[Date].[Calendar Month and Year].[Calendar Month and Year].aLLmembers * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Month and Year]).Item(0)}
+ ) ON COLUMNS 
+--FROM ( SELECT ( [Sales Force].[Sales Force Number].&amp;[338] ) ON COLUMNS
+FROM ( SELECT (- {[Product].[Product Division].&amp;[0000],[Product].[Product Division].&amp;[9100]} ) ON COLUMNS
+FROM ( SELECT ( - {[Product].[Contains Freight].&amp;[Y]} ) ON COLUMNS
+FROM ( SELECT ( - {[Product].[Contains Tax].&amp;[Y]} ) ON COLUMNS
+FROM ( SELECT (  {[End Use].[End Use].[Distributor Stock]} ) ON COLUMNS
+FROM ( SELECT ( - {[Product].[Value Stream].&amp;[0000]} ) ON COLUMNS
+from [AgencyReports]
+)))))))
+
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>SalesForceSalesForceNumber</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Sales Force].[Sales Force Number].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>SalesForceSalesForceNumber</Caption>
+                  <HierarchyUniqueName>[Sales Force].[Sales Force Number]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sales Force].[Sales Force Number].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Value_Stream">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Product].[Value Stream].[Value Stream]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Month and Year].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="DSP">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[DSP]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="EarliestDateValue">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <CommandText> With Member [Measures].[Earliest Date Value]
+As  [Expected Payment Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+Select [Measures].[Earliest Date Value] on 0,
+ [Expected Payment Date].[Calendar Year Hierarchy].[All].firstchild.firstchild.firstchild.firstchild on 1
+from [AgencyReports]
+</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Quarter and Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Quarter and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Date</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Earliest Date Value</MeasureName>
+                      <UniqueName>[Measures].[Earliest Date Value]</UniqueName>
+                    </ID>
+                    <ItemCaption>Earliest Date Value</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> With Member [Measures].[Earliest Date Value]
+As  [Expected Payment Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+Select [Measures].[Earliest Date Value] on 0,
+ [Expected Payment Date].[Calendar Year Hierarchy].[All].firstchild.firstchild.firstchild.firstchild on 1
+from [AgencyReports]
+
+</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Quarter_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Date]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Earliest_Date_Value">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Earliest Date Value]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="LatestDateValue">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <CommandText> With Member [Measures].[Latest Date Value]
+As [Expected Payment Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+Select [Measures].[Latest Date Value] on 0,
+[Expected Payment Date].[Calendar Year Hierarchy].[All].lastchild.lastchild.lastchild.lastchild.lag(1) on 1
+from [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Quarter and Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Quarter and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Date</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Latest Date Value</MeasureName>
+                      <UniqueName>[Measures].[Latest Date Value]</UniqueName>
+                    </ID>
+                    <ItemCaption>Latest Date Value</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> With Member [Measures].[Latest Date Value]
+As [Expected Payment Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+Select [Measures].[Latest Date Value] on 0,
+[Expected Payment Date].[Calendar Year Hierarchy].[All].lastchild.lastchild.lastchild.lastchild.lag(1) on 1
+from [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Quarter_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Year Hierarchy].[Calendar Date]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Latest_Date_Value">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Latest Date Value]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="SalesForceSalesForceNumber">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sales Force].[Sales Force Number].ALLMEMBERS ON ROWS FROM [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Sales Force].[Sales Force Number].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sales Force].[Sales Force Number].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <AutoGenerated>true</AutoGenerated>
+        <Hidden>true</Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <TypeName>System.String</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CurrentDateValue">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <CommandText>Select {} on 0,
+EXTRACT({[Date].[Calendar Date Short Century].[Calendar Date Short Century].members * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Date Short Century]).Item(0) on 1
+From [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Date Short Century</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Date Short Century]</HierarchyUniqueName>
+                      <LevelName>Calendar Date Short Century</LevelName>
+                      <UniqueName>[Date].[Calendar Date Short Century].[Calendar Date Short Century]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date Short Century</ItemCaption>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>Select {} on 0,
+EXTRACT({[Date].[Calendar Date Short Century].[Calendar Date Short Century].members * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Date Short Century]).Item(0) on 1
+From [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Date_Short_Century">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Date Short Century].[Calendar Date Short Century]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DateYearMonth">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <CommandText> WITH MEMBER [Measures].[ParameterCaption] AS 
+'[Expected Payment Date].[Calendar Month and Year].CURRENTMEMBER.MEMBER_CAPTION' 
+MEMBER [Measures].[ParameterValue] AS 
+'[Expected Payment Date].[Calendar Month and Year].CURRENTMEMBER.UNIQUENAME'
+ MEMBER [Measures].[ParameterLevel] AS 
+ '[Expected Payment Date].[Calendar Month and Year].CURRENTMEMBER.LEVEL.ORDINAL'
+  SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], 
+ [Measures].[ParameterLevel]} ON COLUMNS , 
+  [Expected Payment Date].[Calendar Month and Year].ALLMEMBERS ON ROWS 
+FROM [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Expected Payment Date</DimensionName>
+                      <HierarchyName>Calendar Month and Year</HierarchyName>
+                      <HierarchyUniqueName>[Expected Payment Date].[Calendar Month and Year]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Expected Payment Date].[Calendar Month and Year].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> WITH MEMBER [Measures].[ParameterCaption] AS 
+'[Expected Payment Date].[Calendar Month and Year].CURRENTMEMBER.MEMBER_CAPTION' 
+MEMBER [Measures].[ParameterValue] AS 
+'[Expected Payment Date].[Calendar Month and Year].CURRENTMEMBER.UNIQUENAME'
+ MEMBER [Measures].[ParameterLevel] AS 
+ '[Expected Payment Date].[Calendar Month and Year].CURRENTMEMBER.LEVEL.ORDINAL'
+  SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], 
+ [Measures].[ParameterLevel]} ON COLUMNS , 
+  [Expected Payment Date].[Calendar Month and Year].ALLMEMBERS ON ROWS 
+FROM [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Expected Payment Date].[Calendar Month and Year].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="CurrentDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CurrentDateValue</DataSetName>
+          <ValueField>Calendar_Date_Short_Century</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>CurrentDateValue</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CurrentDateValue</DataSetName>
+          <ValueField>Calendar_Date_Short_Century</ValueField>
+          <LabelField>Calendar_Date_Short_Century</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="EarliestDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>EarliestDateValue</DataSetName>
+          <ValueField>Earliest_Date_Value</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EarliestDateValue</DataSetName>
+          <ValueField>Earliest_Date_Value</ValueField>
+          <LabelField>Calendar_Date</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="LatestDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>LatestDateValue</DataSetName>
+          <ValueField>Latest_Date_Value</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>LatestDateValue</DataSetName>
+          <ValueField>Latest_Date_Value</ValueField>
+          <LabelField>Calendar_Date</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="SalesForceSalesForceNumber">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Sales Force].[Sales Force Number].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sales Force</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesForceSalesForceNumber</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+  </ReportParameters>
+  <CodeModules>
+    <CodeModule>ABL.SSRSSupport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c63fea95ee3c2f87</CodeModule>
+  </CodeModules>
+  <ReportUnitType>Inch</ReportUnitType>
+  <ReportID>978778e1-fe46-4c50-962e-ea3b1076f78c</ReportID>
+</Report>

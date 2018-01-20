@@ -1,0 +1,1467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report >
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="SQL_AGILESQL1">
+      <DataSourceReference>SQL_AGILESQL1</DataSourceReference>
+      <SecurityType>None</SecurityType>
+      <DataSourceID>fb6d32b4-b7f3-4c87-ae29-18e5278b533f</DataSourceID>
+    </DataSource>
+    <DataSource Name="ILLUMINE_DATA">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=BUSINTEL00;Initial Catalog=ILLUMINE</ConnectString>
+        <IntegratedSecurity>true</IntegratedSecurity>
+      </ConnectionProperties>
+      <SecurityType>Integrated</SecurityType>
+      <DataSourceID>76a415ca-1469-41f1-86df-1668866f36d1</DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Query>
+        <DataSourceName>SQL_AGILESQL1</DataSourceName>
+        <CommandText>WITH PILOT_AGENT_CLAIMS AS
+(
+SELECT FC.FIELDCLAIM_ID,FC.CREATED_DATE, FC.ORDER_NUMBER, AGENT_NUMBER, QI.PART_NUMBER,'' AS PRODUCT_GROUP, M.Email
+  FROM FIELDCLAIMWORKBENCH.[QDM].[ABL_QDM_FIELDCLAIM] AS FC
+	INNER JOIN FieldClaimWorkbench.QDM.ABL_QDM_CLAIM_OWNER_GROUP_ASSIGNMENT AS OG ON OG.USERNAME = FC.OWNER
+	INNER JOIN FIELDCLAIMWORKBENCH.QDM.ABL_QDM_ITEM AS QI ON QI.FIELDCLAIM_ID = FC.FIELDCLAIM_ID
+	INNER JOIN AGILE.[dbo].[aspnet_Users] AS U ON U.UserName = CAST(FC.OWNER AS nVarChar(256))
+	INNER JOIN AGILE.[dbo].[aspnet_Membership] AS M ON M.UserId = U.UserId	
+  WHERE FC.CREATED_DATE &gt;= DATEADD(day, -1, CONVERT(VARCHAR(10),GETDATE(), 101)) AND FC.CREATED_DATE &lt; DATEADD(day, 0, CONVERT(VARCHAR(10),GETDATE(), 101))
+),
+AGENT_CLAIM_REQUESTS AS
+(
+SELECT FIELDCLAIM_ID AS  REQUEST_FIELDCLAIM_ID, FC.REQUEST_ID, FC.CREATED_DATE REQUEST_CREATED_DATE, AGENT_NUMBER AS REQUEST_AGENT_NUMBER
+FROM AGILE.ABL.ABL_QDM_FIELDCLAIM_REQUEST AS FC
+)
+
+
+SELECT FIELDCLAIM_ID, CONVERT(VARCHAR, CREATED_DATE,101)  AS CREATED_DATE, ORDER_NUMBER, AGENT_NUMBER, COALESCE(PART_NUMBER, 'UNK') AS PART_NUMBER, Email,REQUEST_FIELDCLAIM_ID, CONVERT(VARCHAR, REQUEST_CREATED_DATE,101) AS REQUEST_CREATED_DATE, REQUEST_AGENT_NUMBER, CREATED_DATE AS FULL_CREATED_DATE
+FROM PILOT_AGENT_CLAIMS AS PAC
+	LEFT JOIN AGENT_CLAIM_REQUESTS AS ACR ON ACR.REQUEST_FIELDCLAIM_ID = PAC.FIELDCLAIM_ID AND ACR.REQUEST_AGENT_NUMBER = PAC.AGENT_NUMBER
+ORDER BY CREATED_DATE</CommandText>
+        <UseGenericDesigner>true</UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="FIELDCLAIM_ID">
+          <DataField>FIELDCLAIM_ID</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="CREATED_DATE">
+          <DataField>CREATED_DATE</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ORDER_NUMBER">
+          <DataField>ORDER_NUMBER</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="AGENT_NUMBER">
+          <DataField>AGENT_NUMBER</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="PART_NUMBER">
+          <DataField>PART_NUMBER</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Email">
+          <DataField>Email</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="REQUEST_FIELDCLAIM_ID">
+          <DataField>REQUEST_FIELDCLAIM_ID</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="REQUEST_CREATED_DATE">
+          <DataField>REQUEST_CREATED_DATE</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="REQUEST_AGENT_NUMBER">
+          <DataField>REQUEST_AGENT_NUMBER</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="FULL_CREATED_DATE">
+          <DataField>FULL_CREATED_DATE</DataField>
+          <TypeName>System.DateTime</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>SQL_AGILESQL1</DataSourceName>
+        <CommandText>WITH PILOT_AGENT_CLAIMS AS
+(
+SELECT FC.FIELDCLAIM_ID,FC.CREATED_DATE, FC.ORDER_NUMBER, AGENT_NUMBER, QI.PART_NUMBER,'' AS PRODUCT_GROUP
+  FROM FieldClaimWorkbench.[QDM].[ABL_QDM_FIELDCLAIM] AS FC
+	INNER JOIN FieldClaimWorkbench.QDM.ABL_QDM_CLAIM_OWNER_GROUP_ASSIGNMENT AS OG ON OG.USERNAME = FC.OWNER
+	INNER JOIN FieldClaimWorkbench.QDM.ABL_QDM_ITEM AS QI ON QI.FIELDCLAIM_ID = FC.FIELDCLAIM_ID	
+  WHERE FC.CREATED_DATE &gt;= '06/16/2014' AND FC.CREATED_DATE &lt; DATEADD(day, 0, CONVERT(VARCHAR(10),GETDATE(), 101))
+),
+AGENT_CLAIM_REQUESTS AS
+(
+SELECT FIELDCLAIM_ID AS  REQUEST_FIELDCLAIM_ID, FC.REQUEST_ID, FC.CREATED_DATE REQUEST_CREATED_DATE, AGENT_NUMBER AS REQUEST_AGENT_NUMBER
+FROM AGILE.ABL.ABL_QDM_FIELDCLAIM_REQUEST AS FC
+)
+
+SELECT REPLACE(CONVERT(VARCHAR, PAC.CREATED_DATE,101), '/2014','') AS CREATED_DATE, COUNT(PAC.FIELDCLAIM_ID) - COUNT(ACR.REQUEST_FIELDCLAIM_ID) AS [BYPASSED COUNT], COUNT(ACR.REQUEST_FIELDCLAIM_ID) AS [REQUEST COUNT]
+FROM PILOT_AGENT_CLAIMS AS PAC
+	LEFT JOIN AGENT_CLAIM_REQUESTS AS ACR ON ACR.REQUEST_FIELDCLAIM_ID = PAC.FIELDCLAIM_ID AND ACR.REQUEST_AGENT_NUMBER = PAC.AGENT_NUMBER
+GROUP BY CONVERT(VARCHAR, PAC.CREATED_DATE,101) 
+ORDER BY CREATED_DATE</CommandText>
+        <UseGenericDesigner>true</UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="CREATED_DATE">
+          <DataField>CREATED_DATE</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="BYPASSED_COUNT">
+          <DataField>BYPASSED COUNT</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="REQUEST_COUNT">
+          <DataField>REQUEST COUNT</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet3">
+      <Query>
+        <DataSourceName>SQL_AGILESQL1</DataSourceName>
+        <CommandText>WITH USER_GROUPS AS
+(
+SELECT TD.DISPLAY_NAME AS OWNER_GROUP
+FROM FieldClaimWorkbench.QDM.ABL_QDM_CLAIM_OWNER_GROUP_ASSIGNMENT AS GA
+	INNER JOIN AGILE.ABL.ABL_AGL_TYPE_DEF AS TD ON TD.TYPE_ID = GA.OWNER_GROUP_TYPE_ID
+	INNER JOIN AGILE.dbo.aspnet_Users AS U ON U.UserName = CAST(GA.USERNAME AS nVarchar(256))
+	INNER JOIN AGIle.Dbo.aspnet_Membership AS M ON M.UserId = U.UserId
+WHERE GA.USERNAME NOT IN ('ll_main\ser01', 'll_main\cjg01')
+GROUP BY TD.DISPLAY_NAME
+), UNCLAIMED_REQUEST AS
+(
+SELECT COUNT(0) [UNCALIMED_REQ_COUNT], TD.DISPLAY_NAME AS OWNER_GROUP
+FROM Agile.[ABL].[ABL_QDM_FIELDCLAIM_REQUEST] AS FR	
+	INNER JOIN AGILE.ABL.ABL_AGL_TYPE_DEF AS TD ON TD.TYPE_ID = FR.OWNER_GROUP
+WHERE FR.FIELDCLAIM_ID IS NULL
+	AND FR.STATUS_CODE != 'Rejected'
+GROUP BY  TD.DISPLAY_NAME
+), CLAIM_REQUESTED AS
+(
+SELECT COUNT(0) [CALIMED_REQ_COUNT], TD.DISPLAY_NAME AS OWNER_GROUP
+FROM Agile.[ABL].[ABL_QDM_FIELDCLAIM_REQUEST] AS FR	
+	INNER JOIN AGILE.ABL.ABL_AGL_TYPE_DEF AS TD ON TD.TYPE_ID = FR.OWNER_GROUP	
+WHERE (FR.FIELDCLAIM_ID IS NOT NULL	
+ OR FR.STATUS_CODE = 'Rejected')
+GROUP BY TD.DISPLAY_NAME
+)
+
+SELECT UG.OWNER_GROUP AS [OWNER GROUP], SUM(COALESCE([CALIMED_REQ_COUNT], 0)) AS [ACCEPTED REQ COUNT], SUM(COALESCE([UNCALIMED_REQ_COUNT], 0)) AS [PENDING REQ COUNT]
+FROM USER_GROUPS AS UG
+	LEFT JOIN UNCLAIMED_REQUEST AS UR ON UR.OWNER_GROUP = UG.OWNER_GROUP
+	LEFT JOIN CLAIM_REQUESTED AS CR ON CR.OWNER_GROUP = UG.OWNER_GROUP
+	GROUP BY UG.OWNER_GROUP
+ORDER BY UG.OWNER_GROUP</CommandText>
+        <UseGenericDesigner>true</UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="OWNER_GROUP">
+          <DataField>OWNER GROUP</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ACCEPTED_REQ_COUNT">
+          <DataField>ACCEPTED REQ COUNT</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="PENDING_REQ_COUNT">
+          <DataField>PENDING REQ COUNT</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DataSet4">
+      <Query>
+        <DataSourceName>SQL_AGILESQL1</DataSourceName>
+        <CommandText>WITH PILOT_AGENT_CLAIMS AS
+(
+SELECT FC.FIELDCLAIM_ID,FC.CREATED_DATE, FC.ORDER_NUMBER, AGENT_NUMBER, QI.PART_NUMBER,'' AS PRODUCT_GROUP
+  FROM FieldClaimWorkbench.[QDM].[ABL_QDM_FIELDCLAIM] AS FC
+INNER JOIN FieldClaimWorkbench.QDM.ABL_QDM_CLAIM_OWNER_GROUP_ASSIGNMENT AS OG ON OG.USERNAME = FC.OWNER
+	INNER JOIN FieldClaimWorkbench.QDM.ABL_QDM_ITEM AS QI ON QI.FIELDCLAIM_ID = FC.FIELDCLAIM_ID	
+  WHERE 
+  FC.CREATED_DATE &gt;= DATEADD(day, -1, CONVERT(VARCHAR(10),GETDATE(), 101)) AND FC.CREATED_DATE &lt; DATEADD(day, 0, CONVERT(VARCHAR(10),GETDATE(), 101))
+),
+AGENT_CLAIM_REQUESTS AS
+(
+SELECT FIELDCLAIM_ID AS  REQUEST_FIELDCLAIM_ID, FC.REQUEST_ID, FC.CREATED_DATE REQUEST_CREATED_DATE, AGENT_NUMBER AS REQUEST_AGENT_NUMBER
+FROM AGILE.ABL.ABL_QDM_FIELDCLAIM_REQUEST AS FC
+)
+
+SELECT CASE WHEN AGENT_NUMBER = 'A550' THEN 'SWMDC' 
+	  WHEN AGENT_NUMBER = 'A365' THEN 'WRMDC'	 
+	  WHEN AGENT_NUMBER = 'A461' THEN 'WRMDC'
+	  WHEN AGENT_NUMBER = 'A456' THEN 'SEMDC'
+	  WHEN AGENT_NUMBER = 'A492' THEN 'SEMDC'
+	  WHEN AGENT_NUMBER = 'A170' THEN 'NEMDC'
+	  WHEN AGENT_NUMBER = 'A286' THEN 'NEMDC'
+	  WHEN AGENT_NUMBER = 'A425' THEN 'MWMDC'
+	  WHEN AGENT_NUMBER = 'A447' THEN 'MWMDC'
+	  END AS [OWNER GROUP],
+	  AGENT_NUMBER AS [Agent Number], COUNT(PAC.FIELDCLAIM_ID) - COUNT(ACR.REQUEST_FIELDCLAIM_ID) AS [Bypassed Count], COUNT(ACR.REQUEST_FIELDCLAIM_ID) AS [REQUEST COUNT]
+FROM PILOT_AGENT_CLAIMS AS PAC
+	LEFT JOIN AGENT_CLAIM_REQUESTS AS ACR ON ACR.REQUEST_FIELDCLAIM_ID = PAC.FIELDCLAIM_ID AND ACR.REQUEST_AGENT_NUMBER = PAC.AGENT_NUMBER
+GROUP BY CASE WHEN AGENT_NUMBER = 'A550' THEN 'SWMDC' 
+	  WHEN AGENT_NUMBER = 'A365' THEN 'WRMDC'	 
+	  WHEN AGENT_NUMBER = 'A461' THEN 'WRMDC'
+	  WHEN AGENT_NUMBER = 'A456' THEN 'SEMDC'
+	  WHEN AGENT_NUMBER = 'A492' THEN 'SEMDC'
+	  WHEN AGENT_NUMBER = 'A170' THEN 'NEMDC'
+	  WHEN AGENT_NUMBER = 'A286' THEN 'NEMDC'
+	  WHEN AGENT_NUMBER = 'A425' THEN 'MWMDC'
+	  WHEN AGENT_NUMBER = 'A447' THEN 'MWMDC'
+	  END,
+	  AGENT_NUMBER 
+ORDER BY  CASE WHEN AGENT_NUMBER = 'A550' THEN 'SWMDC' 
+	  WHEN AGENT_NUMBER = 'A365' THEN 'WRMDC'	 
+	  WHEN AGENT_NUMBER = 'A461' THEN 'WRMDC'
+	  WHEN AGENT_NUMBER = 'A456' THEN 'SEMDC'
+	  WHEN AGENT_NUMBER = 'A492' THEN 'SEMDC'
+	  WHEN AGENT_NUMBER = 'A170' THEN 'NEMDC'
+	  WHEN AGENT_NUMBER = 'A286' THEN 'NEMDC'
+	  WHEN AGENT_NUMBER = 'A425' THEN 'MWMDC'
+	  WHEN AGENT_NUMBER = 'A447' THEN 'MWMDC'
+	  END,
+	  AGENT_NUMBER</CommandText>
+        <UseGenericDesigner>true</UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Agent_Number">
+          <DataField>Agent Number</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="OWNER_GROUP">
+          <DataField>OWNER GROUP</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Request_Count">
+          <DataField>REQUEST COUNT</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Bypassed_Count">
+          <DataField>Bypassed Count</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Request_Count.Value</FilterExpression>
+          <Operator>TopN</Operator>
+          <FilterValues>
+            <FilterValue DataType="Integer">8</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
+      <WidthSensitivity>True</WidthSensitivity>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Textbox Name="textbox1">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value EvaluationMode="Constant">Claim Request Summary</Value>
+                    <Style>
+                      <FontFamily>Tahoma</FontFamily>
+                      <FontSize>18pt</FontSize>
+                      <Color>#1c3a70</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <DefaultName>textbox1</DefaultName>
+            <Height>0.37723in</Height>
+            <Width>9in</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Chart Name="Chart1">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart1_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!CREATED_DATE.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!CREATED_DATE.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!CREATED_DATE.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>BYPASSED COUNT</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>REQUEST COUNT</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="BYPASSED_COUNT">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!BYPASSED_COUNT.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style>
+                        <Color>Red</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Style>
+                          <Color>Orange</Color>
+                        </Style>
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Line</Type>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartItemInLegend>
+                    <LegendText>Request not via AGILE</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="REQUEST_COUNT">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!REQUEST_COUNT.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style>
+                        <Color>LimeGreen</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Size>5pt</Size>
+                        <Style>
+                          <Color>LimeGreen</Color>
+                        </Style>
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Line</Type>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartItemInLegend>
+                    <LegendText>Request via AGILE</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Interval>1</Interval>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <Angle>90</Angle>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Claim Count</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Requests not via AGILE vs. Requests via AGILE (since 6/3/2014 )</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>BrightPastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet2</DataSetName>
+            <Top>0.57167in</Top>
+            <Height>2.2in</Height>
+            <Width>10in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart2">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart2_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!OWNER_GROUP.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!OWNER_GROUP.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!OWNER_GROUP.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>ACCEPTED REQ COUNT</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>PENDING REQ COUNT</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="ACCEPTED_REQ_COUNT">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!ACCEPTED_REQ_COUNT.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="PENDING_REQ_COUNT">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!PENDING_REQ_COUNT.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style />
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Request Count</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Accepted Request vs. Pending Requests (since 6/3/2014)</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>BrightPastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet3</DataSetName>
+            <Top>2.835in</Top>
+            <Height>2.2in</Height>
+            <Width>10in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Chart Name="Chart3">
+            <ChartCategoryHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Group Name="Chart3_CategoryGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!Agent_Number.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!Agent_Number.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!Agent_Number.Value</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartCategoryHierarchy>
+            <ChartSeriesHierarchy>
+              <ChartMembers>
+                <ChartMember>
+                  <Label>Request Count</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>Bypassed Count</Label>
+                </ChartMember>
+              </ChartMembers>
+            </ChartSeriesHierarchy>
+            <ChartData>
+              <ChartSeriesCollection>
+                <ChartSeries Name="Request_Count">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Request_Count.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style>
+                        <Color>LimeGreen</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartItemInLegend>
+                    <LegendText>Request via AGILE</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="Bypassed_Count">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!Bypassed_Count.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style>
+                        <Color>Red</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ChartItemInLegend>
+                    <LegendText>Request not via AGILE</LegendText>
+                  </ChartItemInLegend>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+              </ChartSeriesCollection>
+            </ChartData>
+            <ChartAreas>
+              <ChartArea Name="Default">
+                <ChartCategoryAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Agents</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMajorTickMarks>
+                      <Interval>1</Interval>
+                    </ChartMajorTickMarks>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <Angle>90</Angle>
+                    <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+                    <MinFontSize>5pt</MinFontSize>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartCategoryAxes>
+                <ChartValueAxes>
+                  <ChartAxis Name="Primary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Count</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                  <ChartAxis Name="Secondary">
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                    <ChartAxisTitle>
+                      <Caption>Axis Title</Caption>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </ChartAxisTitle>
+                    <ChartMajorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                        </Border>
+                      </Style>
+                    </ChartMajorGridLines>
+                    <ChartMinorGridLines>
+                      <Style>
+                        <Border>
+                          <Color>Gainsboro</Color>
+                          <Style>Dotted</Style>
+                        </Border>
+                      </Style>
+                    </ChartMinorGridLines>
+                    <ChartMinorTickMarks>
+                      <Length>0.5</Length>
+                    </ChartMinorTickMarks>
+                    <CrossAt>NaN</CrossAt>
+                    <Location>Opposite</Location>
+                    <Minimum>NaN</Minimum>
+                    <Maximum>NaN</Maximum>
+                    <ChartAxisScaleBreak>
+                      <Style />
+                    </ChartAxisScaleBreak>
+                  </ChartAxis>
+                </ChartValueAxes>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                </Style>
+              </ChartArea>
+            </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Default">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
+            <ChartTitles>
+              <ChartTitle Name="Default">
+                <Caption>Top 8 Agent Participation (Yesterday)</Caption>
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontWeight>Bold</FontWeight>
+                  <TextAlign>General</TextAlign>
+                  <VerticalAlign>Top</VerticalAlign>
+                </Style>
+              </ChartTitle>
+            </ChartTitles>
+            <Palette>BrightPastel</Palette>
+            <ChartBorderSkin>
+              <Style>
+                <BackgroundColor>Gray</BackgroundColor>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <Color>White</Color>
+              </Style>
+            </ChartBorderSkin>
+            <ChartNoDataMessage Name="NoDataMessage">
+              <Caption>No Data Available</Caption>
+              <Style>
+                <BackgroundGradientType>None</BackgroundGradientType>
+                <TextAlign>General</TextAlign>
+                <VerticalAlign>Top</VerticalAlign>
+              </Style>
+            </ChartNoDataMessage>
+            <DataSetName>DataSet4</DataSetName>
+            <Top>5.09944in</Top>
+            <Height>2.2in</Height>
+            <Width>10in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Color>LightGrey</Color>
+                <Style>Solid</Style>
+              </Border>
+              <BackgroundColor>White</BackgroundColor>
+              <BackgroundGradientType>None</BackgroundGradientType>
+            </Style>
+          </Chart>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!CREATED_DATE.Value, "DataSet1") &amp; " to " &amp; Last(Fields!CREATED_DATE.Value, "DataSet1")</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <DefaultName>Textbox2</DefaultName>
+            <Top>0.37723in</Top>
+            <Left>6.92583in</Left>
+            <Height>0.19444in</Height>
+            <Width>1.73042in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>="Includes all products"</Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <DefaultName>Textbox2</DefaultName>
+            <Top>0.405in</Top>
+            <Left>0.42708in</Left>
+            <Height>0.19444in</Height>
+            <Width>2.72in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <Height>7.32665in</Height>
+        <Style />
+      </Body>
+      <Width>10in</Width>
+      <Page>
+        <PageFooter>
+          <Height>0.25806in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox88">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Print Date: " &amp; Globals!ExecutionTime</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Silver</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <DefaultName>Textbox88</DefaultName>
+              <Height>0.22172in</Height>
+              <Width>2.06084in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox89">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Page " &amp; Globals!OverallPageNumber &amp; " of " &amp; Globals!OverallTotalPages</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <Color>Silver</Color>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <DefaultName>Textbox89</DefaultName>
+              <Top>0.00806in</Top>
+              <Left>8.42708in</Left>
+              <Height>0.25in</Height>
+              <Width>1.57292in</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
+        <PageHeight>8.5in</PageHeight>
+        <PageWidth>11in</PageWidth>
+        <LeftMargin>0.25in</LeftMargin>
+        <RightMargin>0.25in</RightMargin>
+        <TopMargin>0.25in</TopMargin>
+        <BottomMargin>0.25in</BottomMargin>
+        <Style>
+          <Border>
+            <Color>DimGray</Color>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="Param2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>DataSet1</DataSetName>
+          <ValueField>PART_NUMBER</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Param2</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>DataSet1</DataSetName>
+          <ValueField>PART_NUMBER</ValueField>
+          <LabelField>PART_NUMBER</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <Variables>
+    <Variable Name="HideSpecAnControls">
+      <Value>1</Value>
+      <Writable>true</Writable>
+    </Variable>
+  </Variables>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <ReportUnitType>Inch</ReportUnitType>
+  <ReportID>36873dbe-7414-415c-9f8d-6bcbe88268c9</ReportID>
+</Report>

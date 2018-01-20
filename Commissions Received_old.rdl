@@ -1,0 +1,3058 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report>
+  <Body>
+    <ReportItems>
+      <Tablix Name="table2">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.36458in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.95833in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.15417in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.875in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.10417in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.18958in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.375in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox26">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Customer_Short_Name.Value</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Customer</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>textbox26</DefaultName>
+                      <ZIndex>19</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>Solid</Style>
+                        </LeftBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox24">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Job_Name.Value</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Job Name</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>18</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox25">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Manufacturer_Shortname.Value</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Manufacturer</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>17</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox27">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Invoice_Number.Value</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Invoice #</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>16</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox2">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!Order_Number.Value</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Order #</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>15</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox8">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Fields!PO_Number.Value</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>PO #</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>textbox8</DefaultName>
+                      <ZIndex>14</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox30">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Sum(Fields!Extended_DSP.Value)</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Invoice Amt</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>13</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox10">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", IIF(LEN(TRIM(Fields!Base_Commission_Amount.Value)) &lt;= 1, SUM(Fields!Commission_Paid_Amount.Value - Fields!Base_Commission_Amount.Value), SUM(Fields!Base_Commission_Amount.Value)) , SUM(Fields!Extended_Commission.Value))</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Base Commission</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>textbox10</DefaultName>
+                      <ZIndex>12</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox15">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", IIF(LEN(TRIM(Fields!Base_Commission_Amount.Value)) &gt; 1, SUM(Fields!Commission_Paid_Amount.Value - Fields!Base_Commission_Amount.Value), 0), 0)</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Additional Commission</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>textbox15</DefaultName>
+                      <ZIndex>11</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox32">
+                      <CanGrow>true</CanGrow>
+                      <UserSort>
+                        <SortExpression>=Sum(Fields!Commission_Paid_Amount.Value)</SortExpression>
+                        <SortExpressionScope>vInvoice</SortExpressionScope>
+                      </UserSort>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total Paid</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>10</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <RightBorder>
+                          <Style>Solid</Style>
+                        </RightBorder>
+                        <BackgroundColor>#093f99</BackgroundColor>
+                        <VerticalAlign>Bottom</VerticalAlign>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox31">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=UCASE(Fields!Customer_Short_Name.Value)</Value>
+                              <Style>
+                                <FontStyle>Italic</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <TextDecoration>Underline</TextDecoration>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ActionInfo>
+                        <Actions>
+                          <Action>
+                            <Drillthrough>
+                              <ReportName>Commissions Received - Sub</ReportName>
+                              <Parameters>
+                                <Parameter Name="FromEntryDateCalendarYearHierarchy">
+                                  <Value>=Parameters!FromEntryDateCalendarYearHierarchy.Value</Value>
+                                </Parameter>
+                                <Parameter Name="ToEntryDateCalendarYearHierarchy">
+                                  <Value>=Parameters!ToEntryDateCalendarYearHierarchy.Value</Value>
+                                </Parameter>
+                                <Parameter Name="SalesForceSalesForceNumber">
+                                  <Value>=Parameters!SalesForceSalesForceNumber.Value</Value>
+                                </Parameter>
+                                <Parameter Name="ManufacturerManufacturerName">
+                                  <Value>=Parameters!ManufacturerManufacturerName.Value</Value>
+                                </Parameter>
+                                <Parameter Name="RepContact">
+                                  <Value>=Parameters!RepContact.Value</Value>
+                                </Parameter>
+                                <Parameter Name="customerShortName">
+                                  <Value>=Fields!Customer_Short_Name.UniqueName</Value>
+                                </Parameter>
+                              </Parameters>
+                            </Drillthrough>
+                          </Action>
+                        </Actions>
+                      </ActionInfo>
+                      <ZIndex>9</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Style>Solid</Style>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox23">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=UCASE(Fields!Job_Name.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>8</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox49">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", Fields!Manufacturer_Shortname.Value, Fields!Sales_Force_Name.Value + " (" + Fields!Manufacturer_Shortname.Value + ")")</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>7</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox50">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Invoice_Number.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>6</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox7">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Order_Number.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>5</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <LeftBorder>
+                          <Color>Black</Color>
+                        </LeftBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox34">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PO_Number.Value</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>$#,##0.00;-$#,##0.00;''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <DefaultName>textbox34</DefaultName>
+                      <ZIndex>4</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox14">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=SUM(Fields!Extended_DSP.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>$#,##0.00;-$#,##0.00;''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>3</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox35">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", IIF(LEN(TRIM(Fields!Base_Commission_Amount.Value)) &lt;= 1, SUM(Fields!Commission_Paid_Amount.Value - Fields!Base_Commission_Amount.Value), SUM(Fields!Base_Commission_Amount.Value)) , SUM(Fields!Extended_Commission.Value))</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>$#,##0.00;-$#,##0.00;''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>2</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox39">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", IIF(LEN(TRIM(Fields!Base_Commission_Amount.Value)) &gt; 1, SUM(Fields!Commission_Paid_Amount.Value - Fields!Base_Commission_Amount.Value), 0), 0)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>$#,##0.00;-$#,##0.00;''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <ZIndex>1</ZIndex>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="textbox40">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=SUM(Fields!Commission_Paid_Amount.Value)</Value>
+                              <Style>
+                                <FontStyle>Normal</FontStyle>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Normal</FontWeight>
+                                <Format>$#,##0.00;-$#,##0.00;''</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                          <Width>0.25pt</Width>
+                        </Border>
+                        <TopBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </TopBorder>
+                        <BottomBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </BottomBorder>
+                        <RightBorder>
+                          <Color>Black</Color>
+                          <Style>Solid</Style>
+                        </RightBorder>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <KeepWithGroup>After</KeepWithGroup>
+              <RepeatOnNewPage>true</RepeatOnNewPage>
+              <KeepTogether>true</KeepTogether>
+            </TablixMember>
+            <TablixMember>
+              <Group Name="vInvoice">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!Job_Name.Value</GroupExpression>
+                  <GroupExpression>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", Fields!Manufacturer_Shortname.Value, Fields!Sales_Force_Name.Value + " (" + Fields!Manufacturer_Shortname.Value + ")")</GroupExpression>
+                  <GroupExpression>=Fields!Invoice_Number.Value</GroupExpression>
+                  <GroupExpression>=Fields!Order_Number.Value</GroupExpression>
+                  <GroupExpression>=Fields!PO_Number.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <SortExpressions>
+                <SortExpression>
+                  <Value>=IIF(Fields!Display_Name.Value = "No Value" Or Fields!Display_Name.Value = "UNKNOWN - -1", Fields!Manufacturer_Shortname.Value, Fields!Sales_Force_Name.Value + " (" + Fields!Manufacturer_Shortname.Value + ")")</Value>
+                </SortExpression>
+                <SortExpression>
+                  <Value>=Fields!Order_Number.Value</Value>
+                </SortExpression>
+              </SortExpressions>
+              <TablixMembers>
+                <TablixMember>
+                  <KeepWithGroup>After</KeepWithGroup>
+                  <RepeatOnNewPage>true</RepeatOnNewPage>
+                  <KeepTogether>true</KeepTogether>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>ID_AGT__Reports_Cube_Data_Source</DataSetName>
+        <Top>1.3in</Top>
+        <Left>0.0125in</Left>
+        <Height>0.625in</Height>
+        <Width>10.39583in</Width>
+        <Style />
+      </Tablix>
+      <Textbox Name="textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Customer: " &amp; LTrim(join(Parameters!CustomerCustomerName.Label,", "))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.26389in</Top>
+        <Left>3.2625in</Left>
+        <Height>0.25in</Height>
+        <Width>3.25in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox36">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Sales Force: " + LTrim(join(Parameters!SalesForceSalesForceNumber.Label,", "))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Left>3.2625in</Left>
+        <Height>0.25in</Height>
+        <Width>3.25in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Manufacturer: " + LTrim(join(Parameters!ManufacturerManufacturerName.Label,", "))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.26389in</Top>
+        <Left>0.0125in</Left>
+        <Height>0.25in</Height>
+        <Width>3.25in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Includes Credit Memos, Standard and Sponsored Commission Types
+Excludes Shared Commissions</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <DefaultName>textbox11</DefaultName>
+        <Top>0.6375in</Top>
+        <Left>1.2625in</Left>
+        <Height>0.34375in</Height>
+        <Width>6.375in</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Applied Filters:" &amp; vbCrLf &amp; vbCrLf &amp; vbCrLf</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.6375in</Top>
+        <Left>0.0125in</Left>
+        <Height>0.34375in</Height>
+        <Width>1.25in</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox37">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Note:</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1in</Top>
+        <Left>0.0125in</Left>
+        <Height>0.25in</Height>
+        <Width>1.25in</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox38">
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Data is current through " + CStr(CDate(Parameters!CurrentDateValue.Label))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Normal</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Top>1in</Top>
+        <Left>1.2625in</Left>
+        <Height>0.25in</Height>
+        <Width>6.375in</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox41">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Rep Contact: " + LTrim(join(Parameters!RepContact.Label,", "))</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Left>6.525in</Left>
+        <Height>0.25in</Height>
+        <Width>3.25in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="textbox3">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>="Selected Timeframe: " + Parameters!FromEntryDateCalendarYearHierarchy.value + " To " + LTrim(Parameters!ToEntryDateCalendarYearHierarchy.Value)</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>8pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>#093f99</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <Left>0.0125in</Left>
+        <Height>0.25in</Height>
+        <Width>3.25in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>1.925in</Height>
+    <Style />
+  </Body>
+  <Width>10.40833in</Width>
+  <Page>
+    <PageHeader>
+      <Height>0.375in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Commissions Received</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <Color>#093f99</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <DefaultName>textbox1</DefaultName>
+          <Height>0.375in</Height>
+          <Width>4.625in</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageHeader>
+    <PageFooter>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox72">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Print Date: " + Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <Top>0in</Top>
+          <Left>0.0125in</Left>
+          <Height>0.25in</Height>
+          <Width>2in</Width>
+          <Style>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="textbox29">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>="Page " + CStr(Globals!PageNumber) + " of " + CStr(Globals!TotalPages)</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <DefaultName>textbox21</DefaultName>
+          <Top>0in</Top>
+          <Left>7.96041in</Left>
+          <Height>0.25in</Height>
+          <Width>2in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style />
+    </PageFooter>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <InteractiveHeight>0in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.25in</LeftMargin>
+    <RightMargin>0.2in</RightMargin>
+    <TopMargin>0.25in</TopMargin>
+    <BottomMargin>0.25in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AGT_Compensation_Cube_Data_Source">
+      <DataSourceReference>AGT_Compensation_Cube_Data_Source</DataSourceReference>
+      <SecurityType>None</SecurityType>
+      <DataSourceID>94587b26-9d78-44e7-8262-4eea7d7676d8</DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ID_AGT__Reports_Cube_Data_Source">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="CustomerCustomerName">
+            <Value>=Parameters!CustomerCustomerName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="SalesForceSalesForceNumber">
+            <Value>=Parameters!SalesForceSalesForceNumber.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ManufacturerManufacturerName">
+            <Value>=Parameters!ManufacturerManufacturerName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(Parameters!FromEntryDateCalendarYearHierarchy.Value,Parameters!ToEntryDateCalendarYearHierarchy.Value, Parameters!EarliestDateValue.Value, Parameters!LatestDateValue.Value, "[Check Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+          </QueryParameter>
+          <QueryParameter Name="RepContact">
+            <Value>=Parameters!RepContact.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT NON EMPTY
+
+{ 
+      [Measures].[Base Invoice Amount]  
+				 ,[Measures].[Base Commission Amount]
+				 ,[Measures].[Extended Commission]
+				 ,[Measures].[Commission Applied Amount]
+                 ,[Measures].[Extended DSP]                 
+                 ,[Measures].[Commission Paid Amount]
+		} ON COLUMNS,
+NON EMPTY {([Commission Invoice].[Job Name].[Job Name].MEMBERS * [Commission Invoice].[PO Number].[PO Number].MEMBERS * [Commission Invoice].[Order Number].[Order Number].MEMBERS * [Commission Type].[Commission Type Desc].[Commission Type Desc].MEMBERS * [Commission Invoice].[Invoice Number].[Invoice Number].MEMBERS * [Date].[Calendar Date Short Century].[Calendar Date Short Century].MEMBERS * [Split Sales Rep].[Sales Force Name].[Sales Force Name].MEMBERS *
+            [Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].MEMBERS *  [Manufacturer].[Manufacturer Name].[Manufacturer Name].MEMBERS *
+            [Customer].[Customer Short Name].[Customer Short Name].MEMBERS * [BuySellCustomer].[Display Name].[Display Name].MEMBERS) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+FROM ( SELECT ( - { [Commission Earned and Shared].[Commission Earned and Shared].[Shared]  } ) ON COLUMNS
+           FROM ( SELECT ( { STRTOSET(@CustomerCustomerName, CONSTRAINED ) } ) ON COLUMNS
+            FROM ( SELECT ( { STRTOSET(@ManufacturerManufacturerName, CONSTRAINED ) } ) ON COLUMNS
+                FROM ( SELECT ( { STRTOSET(@SalesForceSalesForceNumber, CONSTRAINED ) } ) ON COLUMNS FROM ( SELECT ( { STRTOSET(@RepContact, CONSTRAINED ) } ) ON COLUMNS
+  
+                        FROM ( SELECT ( { STRTOSET(@DateRangeSet) } ) ON COLUMNS     
+                            FROM [AgencyReports]
+                            )
+                        )
+                    )
+                )
+            )
+       )</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Commission Invoice</DimensionName>
+                      <HierarchyName>Job Name</HierarchyName>
+                      <HierarchyUniqueName>[Commission Invoice].[Job Name]</HierarchyUniqueName>
+                      <LevelName>Job Name</LevelName>
+                      <UniqueName>[Commission Invoice].[Job Name].[Job Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Job Name</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Commission Invoice</DimensionName>
+                      <HierarchyName>PO Number</HierarchyName>
+                      <HierarchyUniqueName>[Commission Invoice].[PO Number]</HierarchyUniqueName>
+                      <LevelName>PO Number</LevelName>
+                      <UniqueName>[Commission Invoice].[PO Number].[PO Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>PO Number</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Commission Invoice</DimensionName>
+                      <HierarchyName>Order Number</HierarchyName>
+                      <HierarchyUniqueName>[Commission Invoice].[Order Number]</HierarchyUniqueName>
+                      <LevelName>Order Number</LevelName>
+                      <UniqueName>[Commission Invoice].[Order Number].[Order Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Order Number</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Commission Type</DimensionName>
+                      <HierarchyName>Commission Type Desc</HierarchyName>
+                      <HierarchyUniqueName>[Commission Type].[Commission Type Desc]</HierarchyUniqueName>
+                      <LevelName>Commission Type Desc</LevelName>
+                      <UniqueName>[Commission Type].[Commission Type Desc].[Commission Type Desc]</UniqueName>
+                    </ID>
+                    <ItemCaption>Commission Type Desc</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Commission Invoice</DimensionName>
+                      <HierarchyName>Invoice Number</HierarchyName>
+                      <HierarchyUniqueName>[Commission Invoice].[Invoice Number]</HierarchyUniqueName>
+                      <LevelName>Invoice Number</LevelName>
+                      <UniqueName>[Commission Invoice].[Invoice Number].[Invoice Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Invoice Number</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Date Short Century</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Date Short Century]</HierarchyUniqueName>
+                      <LevelName>Calendar Date Short Century</LevelName>
+                      <UniqueName>[Date].[Calendar Date Short Century].[Calendar Date Short Century]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date Short Century</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Split Sales Rep</DimensionName>
+                      <HierarchyName>Sales Force Name</HierarchyName>
+                      <HierarchyUniqueName>[Split Sales Rep].[Sales Force Name]</HierarchyUniqueName>
+                      <LevelName>Sales Force Name</LevelName>
+                      <UniqueName>[Split Sales Rep].[Sales Force Name].[Sales Force Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Sales Force Name</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Shortname</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Shortname]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Shortname</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Shortname</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Name</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Name</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Name].[Manufacturer Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Name</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Customer</DimensionName>
+                      <HierarchyName>Customer Short Name</HierarchyName>
+                      <HierarchyUniqueName>[Customer].[Customer Short Name]</HierarchyUniqueName>
+                      <LevelName>Customer Short Name</LevelName>
+                      <UniqueName>[Customer].[Customer Short Name].[Customer Short Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Customer Short Name</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>BuySellCustomer</DimensionName>
+                      <HierarchyName>Display Name</HierarchyName>
+                      <HierarchyUniqueName>[BuySellCustomer].[Display Name]</HierarchyUniqueName>
+                      <LevelName>Display Name</LevelName>
+                      <UniqueName>[BuySellCustomer].[Display Name].[Display Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Display Name</ItemCaption>
+                    <UniqueName>true</UniqueName>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Base Invoice Amount</MeasureName>
+                      <UniqueName>[Measures].[Base Invoice Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Base Invoice Amount</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Base Commission Amount</MeasureName>
+                      <UniqueName>[Measures].[Base Commission Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Base Commission Amount</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Extended Commission</MeasureName>
+                      <UniqueName>[Measures].[Extended Commission]</UniqueName>
+                    </ID>
+                    <ItemCaption>Extended Commission</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Commission Applied Amount</MeasureName>
+                      <UniqueName>[Measures].[Commission Applied Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Commission Applied Amount</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Extended DSP</MeasureName>
+                      <UniqueName>[Measures].[Extended DSP]</UniqueName>
+                    </ID>
+                    <ItemCaption>Extended DSP</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Commission Paid Amount</MeasureName>
+                      <UniqueName>[Measures].[Commission Paid Amount]</UniqueName>
+                    </ID>
+                    <ItemCaption>Commission Paid Amount</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>SELECT NON EMPTY
+
+{ 
+      [Measures].[Base Invoice Amount]  
+				 ,[Measures].[Base Commission Amount]
+				 ,[Measures].[Extended Commission]
+				 ,[Measures].[Commission Applied Amount]
+                 ,[Measures].[Extended DSP]                 
+                 ,[Measures].[Commission Paid Amount]
+		} ON COLUMNS,
+NON EMPTY {([Commission Invoice].[Job Name].[Job Name].MEMBERS * [Commission Invoice].[PO Number].[PO Number].MEMBERS * [Commission Invoice].[Order Number].[Order Number].MEMBERS * [Commission Type].[Commission Type Desc].[Commission Type Desc].MEMBERS * [Commission Invoice].[Invoice Number].[Invoice Number].MEMBERS * [Date].[Calendar Date Short Century].[Calendar Date Short Century].MEMBERS * [Split Sales Rep].[Sales Force Name].[Sales Force Name].MEMBERS *
+            [Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].MEMBERS *  [Manufacturer].[Manufacturer Name].[Manufacturer Name].MEMBERS *
+            [Customer].[Customer Short Name].[Customer Short Name].MEMBERS * [BuySellCustomer].[Display Name].[Display Name].MEMBERS) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS 
+FROM ( SELECT ( - { [Commission Earned and Shared].[Commission Earned and Shared].[Shared]  } ) ON COLUMNS
+           FROM ( SELECT ( { STRTOSET(@CustomerCustomerName, CONSTRAINED ) } ) ON COLUMNS
+            FROM ( SELECT ( { STRTOSET(@ManufacturerManufacturerName, CONSTRAINED ) } ) ON COLUMNS
+                FROM ( SELECT ( { STRTOSET(@SalesForceSalesForceNumber, CONSTRAINED ) } ) ON COLUMNS FROM ( SELECT ( { STRTOSET(@RepContact, CONSTRAINED ) } ) ON COLUMNS
+  
+                        FROM ( SELECT ( { STRTOSET(@DateRangeSet) } ) ON COLUMNS     
+                            FROM [AgencyReports]
+                            )
+                        )
+                    )
+                )
+            )
+       )</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>CustomerCustomerName</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Customer].[Customer Name].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>CustomerCustomerName</Caption>
+                  <HierarchyUniqueName>[Customer].[Customer Name]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Customer].[Customer Name].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Customer].[Customer Name].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Customer].[Customer Name].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Customer].[Customer Name].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>SalesForceSalesForceNumber</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Sales Force].[Sales Force Number].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>SalesForceSalesForceNumber</Caption>
+                  <HierarchyUniqueName>[Sales Force].[Sales Force Number]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sales Force].[Sales Force Number].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ManufacturerManufacturerName</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Manufacturer].[Manufacturer Name].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>ManufacturerManufacturerName</Caption>
+                  <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Manufacturer].[Manufacturer Name].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Date].[Calendar Year Hierarchy].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>RepContact</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Agent Rep].[Agent Rep].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>RepContact</Caption>
+                  <HierarchyUniqueName>[Agent Rep].[Agent Rep]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Agent Rep].[Agent Rep].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Job_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Commission Invoice].[Job Name].[Job Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="PO_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Commission Invoice].[PO Number].[PO Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Order_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Commission Invoice].[Order Number].[Order Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Commission_Type_Desc">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Commission Type].[Commission Type Desc].[Commission Type Desc]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Invoice_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Commission Invoice].[Invoice Number].[Invoice Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date_Short_Century">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Date Short Century].[Calendar Date Short Century]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Sales_Force_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Split Sales Rep].[Sales Force Name].[Sales Force Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Manufacturer_Shortname">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Manufacturer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Name].[Manufacturer Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Customer_Short_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Customer].[Customer Short Name].[Customer Short Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Display_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[BuySellCustomer].[Display Name].[Display Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Base_Invoice_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Base Invoice Amount]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Base_Commission_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Base Commission Amount]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Extended_Commission">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Extended Commission]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Commission_Applied_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Commission Applied Amount]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Extended_DSP">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Extended DSP]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Commission_Paid_Amount">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Commission Paid Amount]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="EarliestDateMember">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <CommandText>With Member [Measures].[Earliest Date Value]
+As [Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+
+Select [Measures].[Earliest Date Value] on 0,
+[Date].[Calendar Year Hierarchy].[All].firstchild.firstchild.firstchild.firstchild on 1
+from [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Quarter and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Quarter and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Date</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Earliest Date Value</MeasureName>
+                      <UniqueName>[Measures].[Earliest Date Value]</UniqueName>
+                    </ID>
+                    <ItemCaption>Earliest Date Value</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>With Member [Measures].[Earliest Date Value]
+As [Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+
+Select [Measures].[Earliest Date Value] on 0,
+[Date].[Calendar Year Hierarchy].[All].firstchild.firstchild.firstchild.firstchild on 1
+from [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Quarter_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Date]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Earliest_Date_Value">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Earliest Date Value]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="LatestDateMember">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <CommandText>With Member [Measures].[Latest Date Value]
+As [Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+
+Select [Measures].[Latest Date Value] on 0,
+[Date].[Calendar Year Hierarchy].[All].lastchild.lastchild.lastchild.lastchild.lag(1) on 1
+from [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Quarter and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Quarter and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Date</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Latest Date Value</MeasureName>
+                      <UniqueName>[Measures].[Latest Date Value]</UniqueName>
+                    </ID>
+                    <ItemCaption>Latest Date Value</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>With Member [Measures].[Latest Date Value]
+As [Date].[Calendar Year Hierarchy].CurrentMember.UniqueName
+
+Select [Measures].[Latest Date Value] on 0,
+[Date].[Calendar Year Hierarchy].[All].lastchild.lastchild.lastchild.lastchild.lag(1) on 1
+from [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Quarter_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Date]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Latest_Date_Value">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Latest Date Value]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="DateRangeSet">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Quarter and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Quarter and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Year Hierarchy</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                      <LevelName>Calendar Date</LevelName>
+                      <UniqueName>[Date].[Calendar Year Hierarchy].[Calendar Date]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <AutoGenerated>true</AutoGenerated>
+        <Hidden>true</Hidden>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Quarter_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Quarter and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Year Hierarchy].[Calendar Date]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CurrentDateValue">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <CommandText>Select {} on 0,
+EXTRACT({[Date].[Calendar Date Short Name].[Calendar Date Short Name].members * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Date Short Name]).Item(0) on 1
+From [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Date Short Name</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Date Short Name]</HierarchyUniqueName>
+                      <LevelName>Calendar Date Short Name</LevelName>
+                      <UniqueName>[Date].[Calendar Date Short Name].[Calendar Date Short Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date Short Name</ItemCaption>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>Select {} on 0,
+EXTRACT({[Date].[Calendar Date Short Name].[Calendar Date Short Name].members * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Date Short Name]).Item(0) on 1
+From [AgencyReports]</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Calendar_Date_Short_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Date Short Name].[Calendar Date Short Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="SalesForceSalesForceNumber">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sales Force].[Sales Force Number].ALLMEMBERS ON ROWS FROM [AgencyReports]</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items />
+              </Select>
+              <From>AgencyReports</From>
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Sales Force].[Sales Force Number].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Sales Force].[Sales Force Number].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <AutoGenerated>true</AutoGenerated>
+        <Hidden>true</Hidden>
+      </Query>
+      <Fields>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="CustomerCustomerName">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(Parameters!FromEntryDateCalendarYearHierarchy.Value,Parameters!ToEntryDateCalendarYearHierarchy.Value, Parameters!EarliestDateValue.Value, Parameters!LatestDateValue.Value, "[Check Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+            <UserDefined>true</UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Customer].[Customer Name].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Customer].[Customer Name].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Customer].[Customer Name].CURRENTMEMBER.LEVEL.ORDINAL' 
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , 
+FILTER([Customer].[Customer Name].ALLMEMBERS, [Measures].[Ext DSP] ) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)
+</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Customer</DimensionName>
+                      <HierarchyName>Customer Name</HierarchyName>
+                      <HierarchyUniqueName>[Customer].[Customer Name]</HierarchyUniqueName>
+                      <LevelName>Customer Name</LevelName>
+                      <UniqueName>[Customer].[Customer Name].[Customer Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Customer Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Customer].[Customer Name].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Customer].[Customer Name].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Customer].[Customer Name].CURRENTMEMBER.LEVEL.ORDINAL' 
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , 
+FILTER([Customer].[Customer Name].ALLMEMBERS, [Measures].[Ext DSP] ) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)
+
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101001]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101002]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101003]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101004]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101005]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101006]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101007]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2010-10-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Check Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Check Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <Hidden>true</Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Customer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Customer].[Customer Name].[Customer Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ManufacturerManufacturerName">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(Parameters!FromEntryDateCalendarYearHierarchy.Value,Parameters!ToEntryDateCalendarYearHierarchy.Value, Parameters!EarliestDateValue.Value, Parameters!LatestDateValue.Value, "[Check Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+            <UserDefined>true</UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+FILTER([Manufacturer].[Manufacturer Name].ALLMEMBERS, [Measures].[Ext DSP]) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)
+</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Name</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Name</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Name].[Manufacturer Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+FILTER([Manufacturer].[Manufacturer Name].ALLMEMBERS, [Measures].[Ext DSP]) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)
+
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101001]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101002]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101003]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101004]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101005]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101006]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2010-10-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Check Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Check Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <Hidden>true</Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Manufacturer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Name].[Manufacturer Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="RepContact">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(Parameters!FromEntryDateCalendarYearHierarchy.Value,Parameters!ToEntryDateCalendarYearHierarchy.Value, Parameters!EarliestDateValue.Value, Parameters!LatestDateValue.Value, "[Check Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+            <UserDefined>true</UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , 
+FILTER([Agent Rep].[Agent Rep].ALLMEMBERS, [Measures].[Ext DSP]) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Agent Rep</DimensionName>
+                      <HierarchyName>Agent Rep</HierarchyName>
+                      <HierarchyUniqueName>[Agent Rep].[Agent Rep]</HierarchyUniqueName>
+                      <LevelName>Agent Rep</LevelName>
+                      <UniqueName>[Agent Rep].[Agent Rep].[Agent Rep]</UniqueName>
+                    </ID>
+                    <ItemCaption>Agent Rep</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.MEMBER_CAPTION' MEMBER [Measures].[ParameterValue] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.UNIQUENAME' MEMBER [Measures].[ParameterLevel] AS '[Agent Rep].[Agent Rep].CURRENTMEMBER.LEVEL.ORDINAL' SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , 
+FILTER([Agent Rep].[Agent Rep].ALLMEMBERS, [Measures].[Ext DSP]) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101001]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101002]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101003]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101004]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101005]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101006]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20101007]</DefaultValue>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2010-10-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Check Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Check Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Agent_Rep">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Agent Rep].[Agent Rep].[Agent Rep]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="customerShortName">
+      <Query>
+        <DataSourceName>AGT_Compensation_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(Parameters!FromEntryDateCalendarYearHierarchy.Value,Parameters!ToEntryDateCalendarYearHierarchy.Value, Parameters!EarliestDateValue.Value, Parameters!LatestDateValue.Value, "[Check Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+            <UserDefined>true</UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH MEMBER [Measures].[ParameterCaption] AS '[Customer].[Customer Short Name].CURRENTMEMBER.MEMBER_CAPTION'
+MEMBER [Measures].[ParameterValue] AS '[Customer].[Customer Short Name].CURRENTMEMBER.UNIQUENAME' 
+MEMBER [Measures].[ParameterLevel] AS '[Customer].[Customer Short Name].CURRENTMEMBER.LEVEL.ORDINAL' 
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+FILTER([Customer].[Customer Short Name].ALLMEMBERS , [Measures].[Ext DSP]) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Customer</DimensionName>
+                      <HierarchyName>Customer Short Name</HierarchyName>
+                      <HierarchyUniqueName>[Customer].[Customer Short Name]</HierarchyUniqueName>
+                      <LevelName>Customer Short Name</LevelName>
+                      <UniqueName>[Customer].[Customer Short Name].[Customer Short Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Customer Short Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH MEMBER [Measures].[ParameterCaption] AS '[Customer].[Customer Short Name].CURRENTMEMBER.MEMBER_CAPTION'
+MEMBER [Measures].[ParameterValue] AS '[Customer].[Customer Short Name].CURRENTMEMBER.UNIQUENAME' 
+MEMBER [Measures].[ParameterLevel] AS '[Customer].[Customer Short Name].CURRENTMEMBER.LEVEL.ORDINAL' 
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+FILTER([Customer].[Customer Short Name].ALLMEMBERS , [Measures].[Ext DSP]) ON ROWS
+FROM 
+(   SELECT (  {STRTOSET(@DateRangeSet ) } ) ON COLUMNS 
+FROM [AgencyReports]   
+)
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Check Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2010-10-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Check Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Check Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Check Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <SuppressAutoUpdate>true</SuppressAutoUpdate>
+      </Query>
+      <Fields>
+        <Field Name="Customer_Short_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Customer].[Customer Short Name].[Customer Short Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="FromEntryDateCalendarYearHierarchy">
+      <DataType>DateTime</DataType>
+      <Prompt>From (Check Date)</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToEntryDateCalendarYearHierarchy">
+      <DataType>DateTime</DataType>
+      <Prompt>To (Check Date)</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EarliestDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>EarliestDateMember</DataSetName>
+          <ValueField>Earliest_Date_Value</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EarliestDateMember</DataSetName>
+          <ValueField>Earliest_Date_Value</ValueField>
+          <LabelField>Calendar_Date</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="LatestDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>LatestDateMember</DataSetName>
+          <ValueField>Latest_Date_Value</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>LatestDateMember</DataSetName>
+          <ValueField>Latest_Date_Value</ValueField>
+          <LabelField>Calendar_Date</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="CurrentDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>CurrentDateValue</DataSetName>
+          <ValueField>Calendar_Date_Short_Name</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CurrentDateValue</DataSetName>
+          <ValueField>Calendar_Date_Short_Name</ValueField>
+          <LabelField>Calendar_Date_Short_Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="SalesForceSalesForceNumber">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Sales Force].[Sales Force Number].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Rep</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesForceSalesForceNumber</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="ManufacturerManufacturerName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Manufacturer].[Manufacturer Name].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Manufacturer</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ManufacturerManufacturerName</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CustomerCustomerName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Customer].[Customer Name].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Customer</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>CustomerCustomerName</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="RepContact">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Agent Rep].[Agent Rep].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Rep Contact</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>RepContact</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaption</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="DrillTo">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Detail Level</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Order #</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="customerShortName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>customerShortName</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>customerShortName</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaption</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Code>
+Public Function GetCommissionPercentage(ByVal ExtDSP As Decimal, ByVal ExtComm As Decimal) As Decimal
+    If IsNothing(ExtDSP) OR IsNothing(ExtComm) Then
+        Return Nothing
+    Else if ExtDSP = 0 OR ExtComm = 0 Then
+        Return Nothing
+    Else 
+        Return (ExtComm) /(ExtDSP)
+    End If
+End Function
+</Code>
+  <Language>en-US</Language>
+  <CodeModules>
+    <CodeModule>ABL.SSRSSupport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c63fea95ee3c2f87</CodeModule>
+  </CodeModules>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <ReportUnitType>Inch</ReportUnitType>
+  <ReportID>01102f29-8783-4fea-ab5c-1bb232be8aeb</ReportID>
+</Report>

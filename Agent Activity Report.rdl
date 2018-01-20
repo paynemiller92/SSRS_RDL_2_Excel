@@ -1,0 +1,1353 @@
+﻿<Report>
+  <Body>
+    <Height>3.80695in</Height>
+    <Style />
+  </Body>
+  <Width>7.85138in</Width>
+  <Page>
+    <PageFooter>
+      <Height>0.25in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="textbox37">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>PageNumber</Label>
+                  <Value>="Page " + CStr(Globals!PageNumber) + " of " + CStr(Globals!TotalPages)</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Right</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <DefaultName>textbox21</DefaultName>
+          <Left>5.48597in</Left>
+          <Height>0.25in</Height>
+          <Width>2.27536in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Label>PrintTime</Label>
+                  <Value>="Print Date: " + Globals!ExecutionTime</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <DefaultName>Textbox6</DefaultName>
+          <Left>0.00749in</Left>
+          <Height>0.25in</Height>
+          <Width>2.32208in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+        <TopBorder>
+          <Color>Black</Color>
+          <Style>Solid</Style>
+        </TopBorder>
+      </Style>
+    </PageFooter>
+    <InteractiveHeight>0in</InteractiveHeight>
+    <InteractiveWidth>8.5in</InteractiveWidth>
+    <LeftMargin>0.2in</LeftMargin>
+    <RightMargin>0.2in</RightMargin>
+    <TopMargin>0.2in</TopMargin>
+    <BottomMargin>0.2in</BottomMargin>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="AGT_Reports_Cube_Data_Source">
+      <DataSourceReference>AGT_Reports_Cube_Data_Source</DataSourceReference>
+      <SecurityType>None</SecurityType>
+      <DataSourceID>4e732b46-fe8b-4e95-acfc-8de82050aae6</DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ProjectsByFollowUp">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(
+Parameters!FromDate.Value,
+Parameters!ToDate.Value,
+"[Project Creation Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20000101]",
+"[Project Creation Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20201231]",
+"[Project Creation Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+          </QueryParameter>
+          <QueryParameter Name="ManufacturerManufacturerName">
+            <Value>=Parameters!ManufacturerManufacturerName.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT NON EMPTY { [Measures].[Extended Dollars - Quote EDT Lines],
+                   [Measures].[Additional Charges - Quote EDT Lines],
+                   [Measures].[Est Project Amount - Quote EDT Lines]} ON COLUMNS,
+
+NON EMPTY {
+([Project Followup Agent Rep].[Name].[Name].ALLMEMBERS *
+[Project Creation Date].[Calendar Month and Year].[Calendar Month and Year].ALLMEMBERS *
+[Quote EDT Lines].[Project Number].[Project Number].ALLMEMBERS  *
+[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].ALLMEMBERS
+)}   ON ROWS
+
+
+
+FROM ( SELECT ( -{ [Project Subscription Flag].[Subscription Flag].[Y] } ) ON COLUMNS
+FROM ( SELECT ( STRTOSET( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @ManufacturerManufacturerName, CONSTRAINED) ) ON COLUMNS
+FROM ( SELECT (  - { [Project Status].[Project Status Desc].&amp;[Inactive] } ) ON COLUMNS
+
+FROM [AgencyReports]
+
+))))
+
+where
+   (
+          except([Quote Type].[Quote Type Code].Children,{[Quote Type].[Quote Type Code].[QCK] }) ,
+          except([Quote Line Category Type].[Quote Line Category Type Include In Total].Children,
+                {[Quote Line Category Type].[Quote Line Category Type Include In Total].[NO] })
+   ) </CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Project Followup Agent Rep</DimensionName>
+                      <HierarchyName>Name</HierarchyName>
+                      <HierarchyUniqueName>[Project Followup Agent Rep].[Name]</HierarchyUniqueName>
+                      <LevelName>Name</LevelName>
+                      <UniqueName>[Project Followup Agent Rep].[Name].[Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Project Creation Date</DimensionName>
+                      <HierarchyName>Calendar Month and Year</HierarchyName>
+                      <HierarchyUniqueName>[Project Creation Date].[Calendar Month and Year]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Project Creation Date].[Calendar Month and Year].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Quote EDT Lines</DimensionName>
+                      <HierarchyName>Project Number</HierarchyName>
+                      <HierarchyUniqueName>[Quote EDT Lines].[Project Number]</HierarchyUniqueName>
+                      <LevelName>Project Number</LevelName>
+                      <UniqueName>[Quote EDT Lines].[Project Number].[Project Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Project Number</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Shortname</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Shortname]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Shortname</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Shortname</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Extended Dollars - Quote EDT Lines</MeasureName>
+                      <UniqueName>[Measures].[Extended Dollars - Quote EDT Lines]</UniqueName>
+                    </ID>
+                    <ItemCaption>Extended Dollars - Quote EDT Lines</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Additional Charges - Quote EDT Lines</MeasureName>
+                      <UniqueName>[Measures].[Additional Charges - Quote EDT Lines]</UniqueName>
+                    </ID>
+                    <ItemCaption>Additional Charges - Quote EDT Lines</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Est Project Amount - Quote EDT Lines</MeasureName>
+                      <UniqueName>[Measures].[Est Project Amount - Quote EDT Lines]</UniqueName>
+                    </ID>
+                    <ItemCaption>Est Project Amount - Quote EDT Lines</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>SELECT NON EMPTY { [Measures].[Extended Dollars - Quote EDT Lines],
+                   [Measures].[Additional Charges - Quote EDT Lines],
+                   [Measures].[Est Project Amount - Quote EDT Lines]} ON COLUMNS,
+
+NON EMPTY {
+([Project Followup Agent Rep].[Name].[Name].ALLMEMBERS *
+[Project Creation Date].[Calendar Month and Year].[Calendar Month and Year].ALLMEMBERS *
+[Quote EDT Lines].[Project Number].[Project Number].ALLMEMBERS  *
+[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].ALLMEMBERS
+)}   ON ROWS
+
+
+
+FROM ( SELECT ( -{ [Project Subscription Flag].[Subscription Flag].[Y] } ) ON COLUMNS
+FROM ( SELECT ( STRTOSET( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @ManufacturerManufacturerName, CONSTRAINED) ) ON COLUMNS
+FROM ( SELECT (  - { [Project Status].[Project Status Desc].&amp;[Inactive] } ) ON COLUMNS
+
+FROM [AgencyReports]
+
+))))
+
+where
+   (
+          except([Quote Type].[Quote Type Code].Children,{[Quote Type].[Quote Type Code].[QCK] }) ,
+          except([Quote Line Category Type].[Quote Line Category Type Include In Total].Children,
+                {[Quote Line Category Type].[Quote Line Category Type Include In Total].[NO] })
+   ) </Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Project Creation Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2013-01-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Project Creation Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Project Creation Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Project Creation Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Project Creation Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Project Creation Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ManufacturerManufacturerName</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Manufacturer].[Manufacturer Name].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>ManufacturerManufacturerName</Caption>
+                  <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Manufacturer].[Manufacturer Name].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Project Followup Agent Rep].[Name].[Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Project Creation Date].[Calendar Month and Year].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Project_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Quote EDT Lines].[Project Number].[Project Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Extended_Dollars___Quote_EDT_Lines">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Extended Dollars - Quote EDT Lines]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Manufacturer_Shortname">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Additional_Charges___Quote_EDT_Lines">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Additional Charges - Quote EDT Lines]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Est_Project_Amount___Quote_EDT_Lines">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Est Project Amount - Quote EDT Lines]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="OrdersEntered">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(
+Parameters!FromDate.Value,
+Parameters!ToDate.Value,
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20000101]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20201231]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+          </QueryParameter>
+          <QueryParameter Name="EndUseEndUse">
+            <Value>=Parameters!EndUseEndUse.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="ManufacturerManufacturerName">
+            <Value>=Parameters!ManufacturerManufacturerName.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT
+NON EMPTY { [Measures].[Extended DSP - Sales Order], [Measures].[Count of Lines - Sales Order] } ON COLUMNS
+
+, NON EMPTY { (
+[Sales Order].[Entered By User Name].[Entered By User Name].ALLMEMBERS *
+[Entry Date].[Calendar Month and Year].[Calendar Month and Year].ALLMEMBERS *
+[Sales Order].[Order Number].[Order Number].ALLMEMBERS *
+[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].ALLMEMBERS ) } ON ROWS
+
+FROM ( SELECT ( -{ [Line Status].[Line Status Code].[CAN], [Line Status].[Line Status Code].[CANCELLED] } ) ON COLUMNS
+FROM ( SELECT ( -{ [Line Type].[Line Type Code].[MSC], [Line Type].[Line Type Code].[UNK] } ) ON COLUMNS
+FROM ( SELECT ( { [Order Type].[Order Type].[LLA], [Order Type].[Order Type].[LLI], [Order Type].[Order Type].[LLX], [Order Type].[Order Type].[Non ABL] } ) ON COLUMNS
+
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @EndUseEndUse, CONSTRAINED) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @ManufacturerManufacturerName, CONSTRAINED) ) ON COLUMNS
+
+FROM [AgencyReports]
+
+))))))</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Sales Order</DimensionName>
+                      <HierarchyName>Entered By User Name</HierarchyName>
+                      <HierarchyUniqueName>[Sales Order].[Entered By User Name]</HierarchyUniqueName>
+                      <LevelName>Entered By User Name</LevelName>
+                      <UniqueName>[Sales Order].[Entered By User Name].[Entered By User Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Entered By User Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Entry Date</DimensionName>
+                      <HierarchyName>Calendar Month and Year</HierarchyName>
+                      <HierarchyUniqueName>[Entry Date].[Calendar Month and Year]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Entry Date].[Calendar Month and Year].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Sales Order</DimensionName>
+                      <HierarchyName>Order Number</HierarchyName>
+                      <HierarchyUniqueName>[Sales Order].[Order Number]</HierarchyUniqueName>
+                      <LevelName>Order Number</LevelName>
+                      <UniqueName>[Sales Order].[Order Number].[Order Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Order Number</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Shortname</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Shortname]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Shortname</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Shortname</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Extended DSP - Sales Order</MeasureName>
+                      <UniqueName>[Measures].[Extended DSP - Sales Order]</UniqueName>
+                    </ID>
+                    <ItemCaption>Extended DSP - Sales Order</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Count of Lines - Sales Order</MeasureName>
+                      <UniqueName>[Measures].[Count of Lines - Sales Order]</UniqueName>
+                    </ID>
+                    <ItemCaption>Count of Lines - Sales Order</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>SELECT
+NON EMPTY { [Measures].[Extended DSP - Sales Order], [Measures].[Count of Lines - Sales Order] } ON COLUMNS
+
+, NON EMPTY { (
+[Sales Order].[Entered By User Name].[Entered By User Name].ALLMEMBERS *
+[Entry Date].[Calendar Month and Year].[Calendar Month and Year].ALLMEMBERS *
+[Sales Order].[Order Number].[Order Number].ALLMEMBERS *
+[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].ALLMEMBERS ) } ON ROWS
+
+FROM ( SELECT ( -{ [Line Status].[Line Status Code].[CAN], [Line Status].[Line Status Code].[CANCELLED] } ) ON COLUMNS
+FROM ( SELECT ( -{ [Line Type].[Line Type Code].[MSC], [Line Type].[Line Type Code].[UNK] } ) ON COLUMNS
+FROM ( SELECT ( { [Order Type].[Order Type].[LLA], [Order Type].[Order Type].[LLI], [Order Type].[Order Type].[LLX], [Order Type].[Order Type].[Non ABL] } ) ON COLUMNS
+
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @EndUseEndUse, CONSTRAINED) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @ManufacturerManufacturerName, CONSTRAINED) ) ON COLUMNS
+
+FROM [AgencyReports]
+
+))))))</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Entry Date].[Calendar Year Hierarchy].[Calendar Date].&amp;[20130222]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Entry Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Entry Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>EndUseEndUse</Name>
+                  <DefaultValues>
+                    <DefaultValue>[End Use].[End Use Shortname].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>EndUseEndUse</Caption>
+                  <HierarchyUniqueName>[End Use].[End Use Shortname]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [End Use].[End Use Shortname].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [End Use].[End Use Shortname].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [End Use].[End Use Shortname].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [End Use].[End Use Shortname].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>ManufacturerManufacturerName</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Manufacturer].[Manufacturer Name].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>ManufacturerManufacturerName</Caption>
+                  <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Manufacturer].[Manufacturer Name].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Entered_By_User_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Sales Order].[Entered By User Name].[Entered By User Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Entry Date].[Calendar Month and Year].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Order_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Sales Order].[Order Number].[Order Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Extended_DSP___Sales_Order">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Extended DSP - Sales Order]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Manufacturer_Shortname">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Count_of_Lines___Sales_Order">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Count of Lines - Sales Order]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="SalesForceName">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <CommandText> SELECT { } ON COLUMNS
+, { (
+[Data Access Sales Force].[Sales Force Name].[Sales Force Name].ALLMEMBERS
+, [Data Access Sales Force].[Primary Sales Force Number].[Primary Sales Force number].ALLMEMBERS
+, [Data Access Sales Force].[Sales Force Number].[Sales Force Number].ALLMEMBERS
+,EXTRACT({[Date].[Calendar Date Short Name].[Calendar Date Short Name].members * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Date Short Name]).Item(0) ) }
+
+ON ROWS
+FROM [AgencyReports]
+
+</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Data Access Sales Force</DimensionName>
+                      <HierarchyName>Sales Force Name</HierarchyName>
+                      <HierarchyUniqueName>[Data Access Sales Force].[Sales Force Name]</HierarchyUniqueName>
+                      <LevelName>Sales Force Name</LevelName>
+                      <UniqueName>[Data Access Sales Force].[Sales Force Name].[Sales Force Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Sales Force Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Data Access Sales Force</DimensionName>
+                      <HierarchyName>Primary Sales Force Number</HierarchyName>
+                      <HierarchyUniqueName>[Data Access Sales Force].[Primary Sales Force Number]</HierarchyUniqueName>
+                      <LevelName>Primary Sales Force Number</LevelName>
+                      <UniqueName>[Data Access Sales Force].[Primary Sales Force Number].[Primary Sales Force Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Primary Sales Force Number</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Data Access Sales Force</DimensionName>
+                      <HierarchyName>Sales Force Number</HierarchyName>
+                      <HierarchyUniqueName>[Data Access Sales Force].[Sales Force Number]</HierarchyUniqueName>
+                      <LevelName>Sales Force Number</LevelName>
+                      <UniqueName>[Data Access Sales Force].[Sales Force Number].[Sales Force Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Sales Force Number</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Date</DimensionName>
+                      <HierarchyName>Calendar Date Short Name</HierarchyName>
+                      <HierarchyUniqueName>[Date].[Calendar Date Short Name]</HierarchyUniqueName>
+                      <LevelName>Calendar Date Short Name</LevelName>
+                      <UniqueName>[Date].[Calendar Date Short Name].[Calendar Date Short Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Date Short Name</ItemCaption>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement> SELECT { } ON COLUMNS
+, { (
+[Data Access Sales Force].[Sales Force Name].[Sales Force Name].ALLMEMBERS
+, [Data Access Sales Force].[Primary Sales Force Number].[Primary Sales Force number].ALLMEMBERS
+, [Data Access Sales Force].[Sales Force Number].[Sales Force Number].ALLMEMBERS
+,EXTRACT({[Date].[Calendar Date Short Name].[Calendar Date Short Name].members * [Date].[Current Date].&amp;[CURRENT]}, [Date].[Calendar Date Short Name]).Item(0) ) }
+
+ON ROWS
+FROM [AgencyReports]
+
+</Statement>
+              <ParameterDefinitions />
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Sales_Force_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Data Access Sales Force].[Sales Force Name].[Sales Force Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Primary_Sales_Force_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Data Access Sales Force].[Primary Sales Force Number].[Primary Sales Force Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Sales_Force_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Data Access Sales Force].[Sales Force Number].[Sales Force Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Date_Short_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Date].[Calendar Date Short Name].[Calendar Date Short Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+      </Fields>
+      <Filters>
+        <Filter>
+          <FilterExpression>=Fields!Sales_Force_Number.Value</FilterExpression>
+          <Operator>Equal</Operator>
+          <FilterValues>
+            <FilterValue>=Fields!Primary_Sales_Force_Number.Value</FilterValue>
+          </FilterValues>
+        </Filter>
+      </Filters>
+    </DataSet>
+    <DataSet Name="EndUseEndUse">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(
+Parameters!FromDate.Value,
+Parameters!ToDate.Value,
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20000101]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20201231]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+            <UserDefined>true</UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH
+MEMBER [Measures].[ParameterCaption] AS [End Use].[End Use Shortname].CURRENTMEMBER.MEMBER_CAPTION
+MEMBER [Measures].[ParameterValue] AS [End Use].[End Use Shortname].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS [End Use].[End Use Shortname].CURRENTMEMBER.LEVEL.ORDINAL
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+
+FILTER ( [End Use].[End Use Shortname].ALLMEMBERS, [Measures].[Extended DSP - Sales Order] ) ON ROWS
+
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+
+FROM [AgencyReports]
+
+)</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>End Use</DimensionName>
+                      <HierarchyName>End Use Shortname</HierarchyName>
+                      <HierarchyUniqueName>[End Use].[End Use Shortname]</HierarchyUniqueName>
+                      <LevelName>End Use Shortname</LevelName>
+                      <UniqueName>[End Use].[End Use Shortname].[End Use Shortname]</UniqueName>
+                    </ID>
+                    <ItemCaption>End Use Shortname</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH
+MEMBER [Measures].[ParameterCaption] AS [End Use].[End Use Shortname].CURRENTMEMBER.MEMBER_CAPTION
+MEMBER [Measures].[ParameterValue] AS [End Use].[End Use Shortname].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS [End Use].[End Use Shortname].CURRENTMEMBER.LEVEL.ORDINAL
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+
+FILTER ( [End Use].[End Use Shortname].ALLMEMBERS, [Measures].[Extended DSP - Sales Order] ) ON ROWS
+
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+
+FROM [AgencyReports]
+
+)</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Entry Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2013-01-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Entry Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Entry Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <Hidden>true</Hidden>
+      </Query>
+      <Fields>
+        <Field Name="End_Use_Shortname">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[End Use].[End Use Shortname].[End Use Shortname]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <TypeName>System.String</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="ManufacturerManufacturerName">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(
+Parameters!FromDate.Value,
+Parameters!ToDate.Value,
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20000101]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20201231]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+            <UserDefined>true</UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="EndUseEndUse">
+            <Value>=Parameters!EndUseEndUse.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>WITH
+MEMBER [Measures].[ParameterCaption] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION
+MEMBER [Measures].[ParameterValue] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+
+FILTER ( [Manufacturer].[Manufacturer Name].ALLMEMBERS, [Measures].[Extended DSP - Sales Order] ) ON ROWS
+
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @EndUseEndUse, CONSTRAINED) ) ON COLUMNS
+
+FROM [AgencyReports]
+
+))</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Name</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Name</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Name].[Manufacturer Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterCaption</MeasureName>
+                      <UniqueName>[Measures].[ParameterCaption]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterCaption</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterValue</MeasureName>
+                      <UniqueName>[Measures].[ParameterValue]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterValue</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>ParameterLevel</MeasureName>
+                      <UniqueName>[Measures].[ParameterLevel]</UniqueName>
+                    </ID>
+                    <ItemCaption>ParameterLevel</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>WITH
+MEMBER [Measures].[ParameterCaption] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION
+MEMBER [Measures].[ParameterValue] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME
+MEMBER [Measures].[ParameterLevel] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL
+
+SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS ,
+
+FILTER ( [Manufacturer].[Manufacturer Name].ALLMEMBERS, [Measures].[Extended DSP - Sales Order] ) ON ROWS
+
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @EndUseEndUse, CONSTRAINED) ) ON COLUMNS
+
+FROM [AgencyReports]
+
+))</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[2013-01-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Entry Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Entry Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>EndUseEndUse</Name>
+                  <DefaultValues>
+                    <DefaultValue>[End Use].[End Use].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>EndUseEndUse</Caption>
+                  <HierarchyUniqueName>[End Use].[End Use]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [End Use].[End Use].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [End Use].[End Use].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [End Use].[End Use].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [End Use].[End Use].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+        <Hidden>true</Hidden>
+      </Query>
+      <Fields>
+        <Field Name="Manufacturer_Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Name].[Manufacturer Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="ParameterCaption">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterCaption]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterValue">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterValue]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterLevel">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[ParameterLevel]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="ParameterCaptionIndented">
+          <Value>=Space(3*Fields!ParameterLevel.Value) + Fields!ParameterCaption.Value</Value>
+          <TypeName>System.String</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="AgentTest">
+      <Query>
+        <DataSourceName>AGT_Reports_Cube_Data_Source</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="ManufacturerManufacturerName">
+            <Value>=Parameters!ManufacturerManufacturerName.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="DateRangeSet">
+            <Value>=ABL.SSRSSupport.DateParser.ParseDateToMDX.ParseDateWithHierarchyToMDX(
+Parameters!FromDate.Value,
+Parameters!ToDate.Value,
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20000101]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Year].&amp;[20201231]",
+"[Entry Date].[Calendar Year Hierarchy].[Calendar Date]")</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>
+SELECT NON EMPTY {
+[Measures].[Quote EDT Lines Count],
+[Measures].[Extended Dollars - Quote EDT Lines],
+[Measures].[Extended Commission Dollars - Quote EDT Lines] }
+ON COLUMNS
+
+, NON EMPTY { ([Quote Person].[Name].[Name].ALLMEMBERS *
+[Entry Date].[Calendar Month and Year].[Calendar Month and Year].ALLMEMBERS *
+[Quote EDT Lines].[Project Number].[Project Number].ALLMEMBERS *
+[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].ALLMEMBERS *
+[Quote Type].[Quote Type Code].[Quote Type Code].ALLMEMBERS ) }
+
+ON ROWS
+
+
+FROM ( SELECT ( -{ [Quote Line Category Type].[Quote Line Category Type Include In Total].[No] } ) ON COLUMNS
+FROM ( SELECT ( - {[Quote Line Category Type].[Quote Line Category Type Code].[ALT] } ) ON COLUMNS
+FROM ( SELECT ( { [Quote Type].[Quote Type Code].[PRJ], [Quote Type].[Quote Type Code].[QCK] } ) ON COLUMNS
+FROM ( SELECT ( -{ [Project Subscription Flag].[Subscription Flag].[Y] } ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @ManufacturerManufacturerName, CONSTRAINED) ) ON COLUMNS
+FROM ( SELECT (  - { [Project Status].[Project Status Desc].&amp;[Inactive] } ) ON COLUMNS
+
+FROM [AgencyReports]
+
+)))))))
+</CommandText>
+        <DesignerState>
+          <QueryDefinition xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition">
+            <CommandType>MDX</CommandType>
+            <Type>Query</Type>
+            <QuerySpecification xsi:type="MDXQuerySpecification" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <Select>
+                <Items>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Quote Person</DimensionName>
+                      <HierarchyName>Name</HierarchyName>
+                      <HierarchyUniqueName>[Quote Person].[Name]</HierarchyUniqueName>
+                      <LevelName>Name</LevelName>
+                      <UniqueName>[Quote Person].[Name].[Name]</UniqueName>
+                    </ID>
+                    <ItemCaption>Name</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Entry Date</DimensionName>
+                      <HierarchyName>Calendar Month and Year</HierarchyName>
+                      <HierarchyUniqueName>[Entry Date].[Calendar Month and Year]</HierarchyUniqueName>
+                      <LevelName>Calendar Month and Year</LevelName>
+                      <UniqueName>[Entry Date].[Calendar Month and Year].[Calendar Month and Year]</UniqueName>
+                    </ID>
+                    <ItemCaption>Calendar Month and Year</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Quote EDT Lines</DimensionName>
+                      <HierarchyName>Project Number</HierarchyName>
+                      <HierarchyUniqueName>[Quote EDT Lines].[Project Number]</HierarchyUniqueName>
+                      <LevelName>Project Number</LevelName>
+                      <UniqueName>[Quote EDT Lines].[Project Number].[Project Number]</UniqueName>
+                    </ID>
+                    <ItemCaption>Project Number</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Manufacturer</DimensionName>
+                      <HierarchyName>Manufacturer Shortname</HierarchyName>
+                      <HierarchyUniqueName>[Manufacturer].[Manufacturer Shortname]</HierarchyUniqueName>
+                      <LevelName>Manufacturer Shortname</LevelName>
+                      <UniqueName>[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]</UniqueName>
+                    </ID>
+                    <ItemCaption>Manufacturer Shortname</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Level">
+                      <DimensionName>Quote Type</DimensionName>
+                      <HierarchyName>Quote Type Code</HierarchyName>
+                      <HierarchyUniqueName>[Quote Type].[Quote Type Code]</HierarchyUniqueName>
+                      <LevelName>Quote Type Code</LevelName>
+                      <UniqueName>[Quote Type].[Quote Type Code].[Quote Type Code]</UniqueName>
+                    </ID>
+                    <ItemCaption>Quote Type Code</ItemCaption>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Quote EDT Lines Count</MeasureName>
+                      <UniqueName>[Measures].[Quote EDT Lines Count]</UniqueName>
+                    </ID>
+                    <ItemCaption>Quote EDT Lines Count</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Extended Dollars - Quote EDT Lines</MeasureName>
+                      <UniqueName>[Measures].[Extended Dollars - Quote EDT Lines]</UniqueName>
+                    </ID>
+                    <ItemCaption>Extended Dollars - Quote EDT Lines</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                  <Item>
+                    <ID xsi:type="Measure">
+                      <MeasureName>Extended Commission Dollars - Quote EDT Lines</MeasureName>
+                      <UniqueName>[Measures].[Extended Commission Dollars - Quote EDT Lines]</UniqueName>
+                    </ID>
+                    <ItemCaption>Extended Commission Dollars - Quote EDT Lines</ItemCaption>
+                    <FormattedValue>true</FormattedValue>
+                  </Item>
+                </Items>
+              </Select>
+              <From>AgencyReports</From>
+              <Filter>
+                <FilterItems />
+              </Filter>
+              <Calculations />
+              <Aggregates />
+              <QueryProperties />
+            </QuerySpecification>
+            <Query>
+              <Statement>
+SELECT NON EMPTY {
+[Measures].[Quote EDT Lines Count],
+[Measures].[Extended Dollars - Quote EDT Lines],
+[Measures].[Extended Commission Dollars - Quote EDT Lines] }
+ON COLUMNS
+
+, NON EMPTY { ([Quote Person].[Name].[Name].ALLMEMBERS *
+[Entry Date].[Calendar Month and Year].[Calendar Month and Year].ALLMEMBERS *
+[Quote EDT Lines].[Project Number].[Project Number].ALLMEMBERS *
+[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname].ALLMEMBERS *
+[Quote Type].[Quote Type Code].[Quote Type Code].ALLMEMBERS ) }
+
+ON ROWS
+
+
+FROM ( SELECT ( -{ [Quote Line Category Type].[Quote Line Category Type Include In Total].[No] } ) ON COLUMNS
+FROM ( SELECT ( - {[Quote Line Category Type].[Quote Line Category Type Code].[ALT] } ) ON COLUMNS
+FROM ( SELECT ( { [Quote Type].[Quote Type Code].[PRJ], [Quote Type].[Quote Type Code].[QCK] } ) ON COLUMNS
+FROM ( SELECT ( -{ [Project Subscription Flag].[Subscription Flag].[Y] } ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @DateRangeSet) ) ON COLUMNS
+FROM ( SELECT ( STRTOSET ( @ManufacturerManufacturerName, CONSTRAINED) ) ON COLUMNS
+FROM ( SELECT (  - { [Project Status].[Project Status Desc].&amp;[Inactive] } ) ON COLUMNS
+
+FROM [AgencyReports]
+
+)))))))
+</Statement>
+              <ParameterDefinitions>
+                <ParameterDefinition>
+                  <Name>ManufacturerManufacturerName</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Manufacturer].[Manufacturer Name].[All]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>ManufacturerManufacturerName</Caption>
+                  <HierarchyUniqueName>[Manufacturer].[Manufacturer Name]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Manufacturer].[Manufacturer Name].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Manufacturer].[Manufacturer Name].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                  <MultipleValues>true</MultipleValues>
+                </ParameterDefinition>
+                <ParameterDefinition>
+                  <Name>DateRangeSet</Name>
+                  <DefaultValues>
+                    <DefaultValue>[Entry Date].[Calendar Year Hierarchy].[Calendar Month and Year].&amp;[2013-03-01T00:00:00]</DefaultValue>
+                  </DefaultValues>
+                  <Caption>DateRangeSet</Caption>
+                  <HierarchyUniqueName>[Entry Date].[Calendar Year Hierarchy]</HierarchyUniqueName>
+                  <ParameterValuesQuery>
+                    <Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Entry Date].[Calendar Year Hierarchy].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Entry Date].[Calendar Year Hierarchy].ALLMEMBERS ON ROWS FROM [AgencyReports]</Statement>
+                    <ParameterizedStatement>
+                      <ReferencedParameters />
+                    </ParameterizedStatement>
+                  </ParameterValuesQuery>
+                </ParameterDefinition>
+              </ParameterDefinitions>
+            </Query>
+          </QueryDefinition>
+        </DesignerState>
+      </Query>
+      <Fields>
+        <Field Name="Name">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Quote Person].[Name].[Name]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Calendar_Month_and_Year">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Entry Date].[Calendar Month and Year].[Calendar Month and Year]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Project_Number">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Quote EDT Lines].[Project Number].[Project Number]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Manufacturer_Shortname">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Manufacturer].[Manufacturer Shortname].[Manufacturer Shortname]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Quote_Type_Code">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[Quote Type].[Quote Type Code].[Quote Type Code]" /&gt;</DataField>
+          <TypeName>System.String</TypeName>
+        </Field>
+        <Field Name="Quote_EDT_Lines_Count">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Quote EDT Lines Count]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Extended_Dollars___Quote_EDT_Lines">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Extended Dollars - Quote EDT Lines]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+        <Field Name="Extended_Commission_Dollars___Quote_EDT_Lines">
+          <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Extended Commission Dollars - Quote EDT Lines]" /&gt;</DataField>
+          <TypeName>System.Int32</TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportParameters>
+    <ReportParameter Name="FromDate">
+      <DataType>DateTime</DataType>
+      <Prompt>From Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ToDate">
+      <DataType>DateTime</DataType>
+      <Prompt>To Date</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ShowDetails">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Activity Details</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>All</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Orders Entered</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>3</Value>
+            <Label>Projects By Follow Up</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>4</Value>
+            <Label>Project Quotes Entered</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>5</Value>
+            <Label>Quick Quotes Entered</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="CurrentDateValue">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>SalesForceName</DataSetName>
+          <ValueField>Calendar_Date_Short_Name</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>ReportParameter1</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesForceName</DataSetName>
+          <ValueField>Calendar_Date_Short_Name</ValueField>
+          <LabelField>Calendar_Date_Short_Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="SalesForceName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>SalesForceName</DataSetName>
+          <ValueField>Sales_Force_Name</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>ReportParameter1</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>SalesForceName</DataSetName>
+          <ValueField>Sales_Force_Name</ValueField>
+          <LabelField>Sales_Force_Name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="EndUseEndUse">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[End Use].[End Use Shortname].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>End Use (orders entered only)</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>EndUseEndUse</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="ShowMFR">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Show Manufacturer</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>No</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Yes</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="ManufacturerManufacturerName">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>[Manufacturer].[Manufacturer Name].[All]</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Manufacturer</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>ManufacturerManufacturerName</DataSetName>
+          <ValueField>ParameterValue</ValueField>
+          <LabelField>ParameterCaptionIndented</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="RemoveEmptyMFR">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>=
+CINT(
+IIF(INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "4") &gt; 0 AND INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "5") = 0, 1,
+IIF(INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "5") &gt; 0 AND INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "4") = 0, 2,0))
+)</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>ReportParameter1</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>=
+CINT(
+IIF(INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "4") &gt; 0 AND INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "5") = 0, 1,
+IIF(INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "5") &gt; 0 AND INSTR(JOIN(Parameters!ShowDetails.Value, ", "), "4") = 0, 2,0))
+)</Value>
+            <Label>QuoteNumber</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+  </ReportParameters>
+  <Language>en-US</Language>
+  <CodeModules>
+    <CodeModule>ABL.SSRSSupport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c63fea95ee3c2f87</CodeModule>
+  </CodeModules>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <ReportUnitType>Inch</ReportUnitType>
+  <ReportID>ca629c9b-562a-4d8f-8365-b44241308723</ReportID>
+</Report>
